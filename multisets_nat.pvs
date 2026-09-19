@@ -1,0 +1,192 @@
+multisets_nat : THEORY
+BEGIN
+
+% comment
+
+  multiset: TYPE = [nat -> nat]
+
+  m, n, p: VAR multiset
+  x, y: VAR nat
+
+  empty: multiset = (LAMBDA x: 0)
+
+  count(m)(x): nat = m(x)
+
+  add(x, m): multiset = m WITH [(x) := m(x) + 1]
+
+  union(m, n): multiset = (LAMBDA x: m(x) + n(x))
+
+  intersection(m, n): multiset = (LAMBDA x: min(m(x), n(x)))
+
+  difference(m, n): multiset = (LAMBDA x: IF m(x) > n(x) THEN m(x) - n(x) ELSE 0 ENDIF)
+
+  member(x, m): bool = m(x) > 0
+
+  subset(m, n): bool = FORALL x: m(x) <= n(x)
+
+  % @QED union_empty_left proved by arthur on Fri, 18 Sep 2026 14:17:21 GMT
+  union_empty_left: LEMMA FORALL m: union(empty, m) = m
+
+  % @QED union_empty_right proved by arthur on Fri, 18 Sep 2026 14:17:45 GMT
+  union_empty_right: LEMMA FORALL m: union(m, empty) = m
+
+  % @QED intersection_empty_left proved by arthur on Fri, 18 Sep 2026 14:18:21 GMT
+  intersection_empty_left: LEMMA FORALL m: intersection(empty, m) = empty
+
+  % @QED intersection_empty_right proved by arthur on Fri, 18 Sep 2026 14:18:47 GMT
+  intersection_empty_right: LEMMA FORALL m: intersection(m, empty) = empty
+
+  % @QED difference_empty_left proved by arthur on Fri, 18 Sep 2026 14:19:11 GMT
+  difference_empty_left: LEMMA FORALL m: difference(empty, m) = empty
+
+  % @QED difference_empty_right proved by arthur on Fri, 18 Sep 2026 14:22:09 GMT
+  difference_empty_right: LEMMA FORALL m: difference(m, empty) = m
+
+  % @QED union_comm proved by arthur on Fri, 18 Sep 2026 14:22:29 GMT
+  union_comm: LEMMA
+    FORALL m, n: union(m, n) = union(n, m)
+
+  union_assoc: LEMMA
+    FORALL m, n, p: union(m, union(n, p)) = union(union(m, n), p)
+
+  % @QED intersection_comm proved by arthur on Fri, 18 Sep 2026 14:23:57 GMT
+  intersection_comm: LEMMA
+    FORALL m, n: intersection(m, n) = intersection(n, m)
+
+  % @QED intersection_assoc proved by arthur on Fri, 18 Sep 2026 14:24:48 GMT
+  intersection_assoc: LEMMA
+    FORALL m, n, p: intersection(m, intersection(n, p)) = intersection(intersection(m, n), p)
+
+  % @QED subset_transitive proved by arthur on Fri, 18 Sep 2026 14:25:27 GMT
+  subset_transitive: LEMMA
+   FORALL m, n, p: subset(m,n) AND subset(n,p) IMPLIES  subset(m,p)
+   
+  % @QED subset_union proved by arthur on Fri, 18 Sep 2026 14:25:56 GMT
+  subset_union:  LEMMA
+    FORALL m, n: subset(m, union(m,n))
+
+  % @QED subset_intersection proved by arthur on Fri, 18 Sep 2026 14:25:44 GMT
+  subset_intersection:  LEMMA
+    FORALL m, n: subset(intersection(m,n), m)
+
+  % @QED subset_difference proved by arthur on Fri, 18 Sep 2026 14:26:07 GMT
+  subset_difference: LEMMA
+    FORALL m, n: subset(difference(m,n), m)
+
+  % Baader & Nipkow multiset ordering
+  % M >> N iff there exist X, Y such that X is non-empty sub-multiset of M,
+  % N = (M - X) + Y, and for all y in Y, there is an x in X such that y < x.
+
+  % To formalize this, we might need to define finite multisets first, 
+  % as the standard definition often assumes finiteness.
+  % A multiset is finite if the set of elements with count > 0 is finite.
+
+  is_finite(m): bool = EXISTS (S: set[nat]): is_finite(S) AND (FORALL x: m(x) > 0 => member(x, S))
+
+  finite_multiset: TYPE = (is_finite)
+
+  IMPORTING TRS@relations_closure[finite_multiset]
+
+  % @QED empty_is_finite proved by arthur on Fri, 18 Sep 2026 14:52:17 GMT
+  empty_is_finite: LEMMA is_finite(empty)
+
+  domain(m: finite_multiset): finite_set[nat] = { n: nat | m(n) > 0 }
+
+  singleton_ms(x: nat): finite_multiset = (LAMBDA y: IF x = y THEN 1 ELSE 0 ENDIF)
+
+  is_singleton(m: finite_multiset): bool = EXISTS x: m = singleton_ms(x)
+
+   % @QED union_fin_ms_is_fin_ms proved by arthur on Fri, 18 Sep 2026 14:54:43 GMT
+   union_fin_ms_is_fin_ms: LEMMA FORALL(m,n: finite_multiset) : is_finite(union(m,n))
+
+   intersection_fin_ms_is_fin_ms: LEMMA FORALL(m,n: finite_multiset): is_finite(intersection(m,n))
+% refined version
+   intersection_with_fin_ms_is_fin_ms: LEMMA FORALL(m: finite_multiset, n: multiset): is_finite(intersection(m,n))
+
+    subset_fin_ms_is_fin_ms: LEMMA FORALL(m: multiset ,n: finite_multiset): subset(m,n) IMPLIES is_finite(m)
+    
+   difference_fin_ms_is_fin_ms: LEMMA FORALL(m: finite_multiset, n:multiset): is_finite(difference(m,n))
+
+  singleton_w_rep(x: nat, n: nat): finite_multiset = (LAMBDA y: IF x = y THEN n ELSE 0 ENDIF)
+
+  is_single_element(m: finite_multiset): bool = EXISTS (x: nat, n: nat): m = singleton_w_rep(x, n)
+
+  singleton_w_rep_1: LEMMA
+    FORALL (x: nat): singleton_w_rep(x, 1) = singleton_ms(x)
+
+  union_singleton_w_rep: LEMMA
+    FORALL (x: nat, n, m: nat):
+      union(singleton_w_rep(x, n), singleton_w_rep(x, m)) = singleton_w_rep(x, n + m)
+
+  difference_singleton_w_rep: LEMMA
+    FORALL (x: nat, n, m: nat):
+      n >= m =>
+        difference(singleton_w_rep(x, n), singleton_w_rep(x, m)) = singleton_w_rep(x, n - m)
+
+  difference_singleton_w_rep_empty: LEMMA
+    FORALL (x: nat, n, m: nat):
+      n < m =>
+        difference(singleton_w_rep(x, n), singleton_w_rep(x, m)) = empty
+
+  subset_singleton_w_rep: LEMMA
+    FORALL (m: finite_multiset, x: nat, n: nat):
+      subset(m, singleton_w_rep(x, n)) => m = singleton_w_rep(x, m(x)) AND m(x) <= n
+
+  % Multiset ordering definition
+  ms_ord(m, n: finite_multiset): bool = 
+    EXISTS (X, Y: finite_multiset):
+      subset(X, m) AND NOT X = empty AND
+      n = union(difference(m, X), Y) AND
+      (FORALL y: member(y, Y) => EXISTS x: member(x, X) AND y < x)
+
+% One-step Multiset ordering definition
+  ms_ord_one(m, n: finite_multiset): bool =
+    EXISTS (x: nat, Y: finite_multiset):
+      member(x, m) AND
+      n = union(difference(m, singleton_ms(x)), Y) AND
+      (FORALL y: member(y, Y) => y < x)
+
+  ms_ord_one_subset_ms_ord: LEMMA 
+    subset?(ms_ord_one,  ms_ord)
+
+  ms_ord_one_subset_tc: LEMMA
+    subset?(TC(ms_ord_one),  ms_ord)
+
+  ms_ord_tc_equivalence: LEMMA
+    subset?(TC(ms_ord_one), TC(ms_ord))
+
+  ms_ord_one_subset_rtc: LEMMA
+    subset?(RTC(ms_ord_one),  = o ms_ord)
+
+  ms_ord_rtc_equivalence: CONJECTURE
+    RTC(ms_ord_one) = RTC(ms_ord)
+
+  ms_ord_singleton_w_rep: CONJECTURE
+    FORALL (x, y: nat, nx, ny: nat):
+      ms_ord(singleton_w_rep(x, nx), singleton_w_rep(y, ny)) <=>
+        ((x = y AND nx > ny) OR (x > y AND nx > 0))
+
+  finite_set_nat_max: LEMMA
+    FORALL (s: finite_set[nat]):
+      NOT empty?(s) => EXISTS (n: nat): member(n, s) AND (FORALL (i: nat): member(i, s) => i <= n)
+
+  ms_max: LEMMA
+    FORALL (m: finite_multiset):
+      m /= empty => EXISTS (n: nat): m(n) > 0 AND (FORALL (i: nat): m(i) > 0 => i <= n)
+
+  ms_ord_empty: LEMMA
+    FORALL (m: finite_multiset):
+      NOT m = empty => ms_ord(m, empty)
+
+  ms_ord_irreflexive: LEMMA
+    FORALL (m: finite_multiset):
+      NOT ms_ord(m, m)
+
+  ms_ord_transitive: CONJECTURE
+    FORALL (m, n, p: finite_multiset):
+      ms_ord(m, n) AND ms_ord(n, p) => ms_ord(m, p)
+
+  ms_ord_well_founded: CONJECTURE
+    well_founded?[finite_multiset](ms_ord)
+
+END multisets_nat
