@@ -42,6 +42,9 @@ BEGIN
   % @QED difference_empty_right proved by arthur on Fri, 18 Sep 2026 14:22:09 GMT
   difference_empty_right: LEMMA FORALL m: difference(m, empty) = m
 
+  % @QED difference_m_m_empty proved by arthur on Mon, 21 Sep 2026 17:17:47 GMT
+  difference_m_m_empty: LEMMA FORALL m: difference(m, m) = empty
+
   % @QED union_comm proved by arthur on Fri, 18 Sep 2026 14:22:29 GMT
   union_comm: LEMMA
     FORALL m, n: union(m, n) = union(n, m)
@@ -100,7 +103,7 @@ BEGIN
    union_fin_ms_is_fin_ms: LEMMA FORALL(m,n: finite_multiset) : is_finite(union(m,n))
 
    intersection_fin_ms_is_fin_ms: LEMMA FORALL(m,n: finite_multiset): is_finite(intersection(m,n))
-% refined version
+  % refined version
    intersection_with_fin_ms_is_fin_ms: LEMMA FORALL(m: finite_multiset, n: multiset): is_finite(intersection(m,n))
 
     subset_fin_ms_is_fin_ms: LEMMA FORALL(m: multiset ,n: finite_multiset): subset(m,n) IMPLIES is_finite(m)
@@ -128,6 +131,9 @@ BEGIN
       n < m =>
         difference(singleton_w_rep(x, n), singleton_w_rep(x, m)) = empty
 
+  % @QED subset_singleton proved by arthur on Mon, 21 Sep 2026 17:30:37 GMT
+  subset_singleton : LEMMA subset(m, singleton_ms(x)) IFF m = empty or m = singleton_ms(x)
+
   subset_singleton_w_rep: LEMMA
     FORALL (m: finite_multiset, x: nat, n: nat):
       subset(m, singleton_w_rep(x, n)) => m = singleton_w_rep(x, m(x)) AND m(x) <= n
@@ -149,6 +155,7 @@ BEGIN
   ms_ord_one_subset_ms_ord: LEMMA 
     subset?(ms_ord_one,  ms_ord)
 
+  % @QED ms_ord_one_subset_tc proved by arthur on Mon, 21 Sep 2026 17:32:04 GMT
   ms_ord_one_subset_tc: LEMMA
     subset?(TC(ms_ord_one),  ms_ord)
 
@@ -160,6 +167,9 @@ BEGIN
 
   ms_ord_rtc_equivalence: CONJECTURE
     RTC(ms_ord_one) = RTC(ms_ord)
+
+  ms_ord_singleton_iff_lt: CONJECTURE
+    x > y IFF ms_ord(singleton_ms(x), singleton_ms(y)) 
 
   ms_ord_singleton_w_rep: CONJECTURE
     FORALL (x, y: nat, nx, ny: nat):
