@@ -75,6 +75,9 @@ BEGIN
   % @QED subset_difference proved by arthur on Fri, 18 Sep 2026 14:26:07 GMT
   subset_difference: LEMMA
     FORALL m, n: subset(difference(m,n), m)
+  subset_m_m : 	 CONJECTURE
+    FORALL m : subset(m,m)
+
 
   % Baader & Nipkow multiset ordering
   % M >> N iff there exist X, Y such that X is non-empty sub-multiset of M,
@@ -106,13 +109,52 @@ BEGIN
   % refined version
    intersection_with_fin_ms_is_fin_ms: LEMMA FORALL(m: finite_multiset, n: multiset): is_finite(intersection(m,n))
 
-    subset_fin_ms_is_fin_ms: LEMMA FORALL(m: multiset ,n: finite_multiset): subset(m,n) IMPLIES is_finite(m)
+   subset_fin_ms_is_fin_ms: LEMMA FORALL(m: multiset ,n: finite_multiset): subset(m,n) IMPLIES is_finite(m)
     
    difference_fin_ms_is_fin_ms: LEMMA FORALL(m: finite_multiset, n:multiset): is_finite(difference(m,n))
 
   singleton_w_rep(x: nat, n: nat): finite_multiset = (LAMBDA y: IF x = y THEN n ELSE 0 ENDIF)
 
   is_single_element(m: finite_multiset): bool = EXISTS (x: nat, n: nat): m = singleton_w_rep(x, n)
+
+  subset_ms_subset_dom : CONJECTURE subset(m,n) IMPLIES subset?(domain(m),domain(n))  
+
+  subset_ms_subset_diff_singl : CONJECTURE FORALL(m:finite_multiset | NOT m = empty) :
+                                 LET a = choose(domain(m)) IN
+                                   subset(difference(m,singleton_w_rep(a, m(a))), m) AND
+				   subset(difference(m,singleton_ms(a)), m)
+				   
+
+ occurrences(m:finite_multiset) : RECURSIVE nat =
+      IF m = empty THEN 0
+      ELSE LET a = choose(domain(m)),
+               mp = difference(m,singleton_w_rep(a, m(a))) IN
+	   m(a) + occurrences(mp)
+      ENDIF
+  MEASURE card(domain(m))
+
+card_ms(m:finite_multiset) : RECURSIVE nat =
+      IF m = empty THEN 0
+      ELSE LET a = choose(domain(m)),
+               mp = difference(m,singleton_ms(a)) IN
+	   1 + card_ms(mp)
+      ENDIF
+  MEASURE IF m = empty THEN 0 ELSE LET a = choose(domain(m)) IN occurrences(m) - 1 ENDIF
+
+ occ_eq_card_ms  : CONJECTURE FORALL(m: finite_multiset) : occurrences(m) = card_ms(m)                       
+
+ card_empty_ms : CONJECTURE card_ms(empty) = 0
+ 
+ card_singleton_ms : CONJECTURE card_ms(singleton_ms(x)) = 1
+
+ card_ms_one_char : CONJECTURE card_ms(m) = 1 IFF is_singleton(m)
+
+card_singleton_w_rep : CONJECTURE card_ms(singleton_w_rep(x,y)) = y
+
+card_union_ms : CONJECTURE card_ms(union(m,n)) = card_ms(m) + card_ms(n)
+
+card_difference_ms: CONJECTURE card_ms(difference(m,n)) = card_ms(m) - card_ms(intersection(m,n))
+ 
 
   singleton_w_rep_1: LEMMA
     FORALL (x: nat): singleton_w_rep(x, 1) = singleton_ms(x)
@@ -155,9 +197,20 @@ BEGIN
   ms_ord_one_subset_ms_ord: LEMMA 
     subset?(ms_ord_one,  ms_ord)
 
+%% Lema 7.3.11
+%% ITEM (a)
   % @QED ms_ord_one_subset_tc proved by arthur on Mon, 21 Sep 2026 17:32:04 GMT
   ms_ord_one_subset_tc: LEMMA
     subset?(TC(ms_ord_one),  ms_ord)
+
+  ms_ord_subset_ms_ord_one_tc :  CONJECTURE
+    subset?(ms_ord,TC(ms_ord_one))
+
+  ms_ord_equal_ms_ord_one_tc : COROLLARY
+    ms_ord = TC(ms_ord_one)
+
+  ms_ord_transitive : LEMMA
+     transitive?(ms_ord)
 
   ms_ord_tc_equivalence: LEMMA
     subset?(TC(ms_ord_one), TC(ms_ord))
@@ -165,11 +218,26 @@ BEGIN
   ms_ord_one_subset_rtc: LEMMA
     subset?(RTC(ms_ord_one),  = o ms_ord)
 
-  ms_ord_rtc_equivalence: CONJECTURE
-    RTC(ms_ord_one) = RTC(ms_ord)
 
-  ms_ord_singleton_iff_lt: CONJECTURE
+%% Lemma 7.3.11
+% ITEM (B)
+ms_ord_U_eq_poset: CONJECTURE partial_order?(union(ms_ord, =)) 
+
+
+%% Lema 7.3.11
+%  ITEM (c)
+  ms_ord_singleton_iff_lt: LEMMA
     x > y IFF ms_ord(singleton_ms(x), singleton_ms(y)) 
+
+%% Lemma 7.3.11
+% ITEM (d)
+
+ ms_ord_union_monotone : LEMMA
+   FORALL(m,n,p:finite_multiset) :
+     ms_ord(m,n) IMPLIES ms_ord(union(m,p), union(n,p))
+
+
+
 
   ms_ord_singleton_w_rep: CONJECTURE
     FORALL (x, y: nat, nx, ny: nat):
@@ -188,14 +256,12 @@ BEGIN
     FORALL (m: finite_multiset):
       NOT m = empty => ms_ord(m, empty)
 
+
   ms_ord_irreflexive: LEMMA
     FORALL (m: finite_multiset):
       NOT ms_ord(m, m)
 
-  ms_ord_transitive: CONJECTURE
-    FORALL (m, n, p: finite_multiset):
-      ms_ord(m, n) AND ms_ord(n, p) => ms_ord(m, p)
-
+ 
   ms_ord_well_founded: CONJECTURE
     well_founded?[finite_multiset](ms_ord)
 
