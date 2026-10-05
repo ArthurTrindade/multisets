@@ -8,36 +8,199 @@ multisets_nat_TCCS: THEORY BEGIN
 	difference_TCC1: OBLIGATION
 	FORALL (m: multiset, n: multiset, x): m(x) > n(x) IMPLIES m(x) - n(x) >= 0
 	
-	% Subtype TCC generated (at line 96, column 48) for  {n: nat | m(n) > 0}
+	% Subtype TCC generated (at line 99, column 48) for  {n: nat | m(n) > 0}
 	% expected type  finite_set[nat]
 	  % untried
 	domain_TCC1: OBLIGATION
 	FORALL (m: finite_multiset): is_finite[nat]({n: nat | m(n) > 0})
 	
-	% Subtype TCC generated (at line 98, column 43) for
+	% Subtype TCC generated (at line 101, column 43) for
 	% (LAMBDA y: IF x = y THEN 1 ELSE 0 ENDIF)
 	% expected type  finite_multiset
 	  % untried
 	singleton_ms_TCC1: OBLIGATION
 	FORALL (x: nat): is_finite((LAMBDA y: IF x = y THEN 1 ELSE 0 ENDIF))
 	
-	% Subtype TCC generated (at line 113, column 54) for
+	% Subtype TCC generated (at line 116, column 54) for
 	% (LAMBDA y: IF x = y THEN n ELSE 0 ENDIF)
 	% expected type  finite_multiset
 	  % untried
 	singleton_w_rep_TCC1: OBLIGATION
-	FORALL (x: nat, n: nat): is_finite((LAMBDA y: IF x = y THEN n ELSE 0 ENDIF))
+	FORALL (x, n: nat): is_finite((LAMBDA y: IF x = y THEN n ELSE 0 ENDIF))
 	
-	% Subtype TCC generated (at line 127, column 86) for  n - m
+	% Subtype TCC generated (at line 120, column 71) for  m
+	% expected type  finite_multiset
+	  % untried
+	subset_ms_subset_dom_TCC1: OBLIGATION
+	FORALL (m, n: multiset): subset(m, n) IMPLIES is_finite(m)
+	
+	% Subtype TCC generated (at line 120, column 81) for  n
+	% expected type  finite_multiset
+	  % untried
+	subset_ms_subset_dom_TCC2: OBLIGATION
+	FORALL (m, n: multiset): subset(m, n) IMPLIES is_finite(n)
+	
+	% Subtype TCC generated (at line 123, column 48) for  domain(m)
+	% expected type  (nonempty?[nat])
+	  % untried
+	subset_ms_subset_diff_singl_TCC1: OBLIGATION
+	FORALL (m: finite_multiset | NOT m = empty): nonempty?[nat](domain(m))
+	
+	% Subtype TCC generated (at line 132, column 23) for  mp
+	% expected type  finite_multiset
+	  % untried
+	occurrences_TCC1: OBLIGATION
+	FORALL (m: finite_multiset):
+	    NOT m = empty IMPLIES
+	     FORALL (a: (domain(m)), mp: multiset):
+	       a = choose(domain(m)) AND mp = difference(m, singleton_w_rep(a, m(a)))
+	        IMPLIES is_finite(mp)
+	
+	% Termination TCC generated (at line 132, column 11) for  occurrences(mp)
+	  % untried
+	occurrences_TCC2: OBLIGATION
+	FORALL (m: finite_multiset):
+	    NOT m = empty IMPLIES
+	     FORALL (a: (domain(m)), mp: multiset):
+	       a = choose(domain(m)) AND mp = difference(m, singleton_w_rep(a, m(a)))
+	        IMPLIES card[nat](domain(mp)) < card[nat](domain(m))
+	
+	% Subtype TCC generated (at line 130, column 26) for  domain(m)
+	% expected type  (nonempty?[nat])
+	  % untried
+	occurrences_TCC3: OBLIGATION
+	FORALL (m: finite_multiset): NOT m = empty IMPLIES nonempty?[nat](domain(m))
+	
+	% Subtype TCC generated (at line 142, column 64) for  occurrences(m) - 1
+	% expected type  naturalnumber
+	  % untried
+	card_ms_TCC1: OBLIGATION
+	FORALL (m: finite_multiset):
+	    NOT m = empty IMPLIES
+	     FORALL (a: (domain(m))):
+	       a = choose(domain(m)) IMPLIES occurrences(m) - 1 >= 0
+	
+	% Subtype TCC generated (at line 140, column 16) for  mp
+	% expected type  finite_multiset
+	  % untried
+	card_ms_TCC2: OBLIGATION
+	FORALL (m: finite_multiset):
+	    NOT m = empty IMPLIES
+	     FORALL (a: (domain(m)), mp: multiset):
+	       a = choose(domain(m)) AND mp = difference(m, singleton_ms(a)) IMPLIES
+	        is_finite(mp)
+	
+	% Termination TCC generated (at line 140, column 8) for  card_ms(mp)
+	  % untried
+	card_ms_TCC3: OBLIGATION
+	FORALL (m: finite_multiset):
+	    NOT m = empty IMPLIES
+	     FORALL (a: (domain(m)), mp: multiset):
+	       a = choose(domain(m)) AND mp = difference(m, singleton_ms(a)) IMPLIES
+	        IF mp = empty THEN 0 ELSE occurrences(mp) - 1 ENDIF <
+	         IF m = empty THEN 0 ELSE occurrences(m) - 1 ENDIF
+	
+	% The subtype TCC (at line 142, column 50) in decl nil for
+	% term generated from card_ms  domain(m)
+	% expected type  (nonempty?[nat])
+	% The subtype TCC (at line 142, column 50) in decl nil for
+	% term generated from card_ms  domain(z)
+	% expected type  (nonempty?[nat])
+	% The subtype TCC (at line 138, column 26) in decl nil for
+	% term generated from card_ms  domain(m)
+	% expected type  (nonempty?[nat])
+	% Subtype TCC generated (at line 146, column 36) for  empty
+	% expected type  finite_multiset
+	  % untried
+	card_empty_ms_TCC1: OBLIGATION
+	is_finite(empty)
+	
+	% The subtype TCC (at line 142, column 50) in decl nil for
+	 % term generated from card_ms  domain(m)
+	    % expected type  (nonempty?[nat])
+	  % is subsumed by occurrences_TCC3
+	% The subtype TCC (at line 142, column 50) in decl nil for
+	 % term generated from card_ms  domain(z)
+	    % expected type  (nonempty?[nat])
+	  % is subsumed by occurrences_TCC3
+	% The subtype TCC (at line 138, column 26) in decl nil for
+	 % term generated from card_ms  domain(m)
+	    % expected type  (nonempty?[nat])
+	  % is subsumed by occurrences_TCC3
+	
+	% Subtype TCC generated (at line 150, column 39) for  m
+	% expected type  finite_multiset
+	  % untried
+	card_ms_one_char_TCC1: OBLIGATION
+	FORALL (m: multiset): is_finite(m)
+	
+	% The subtype TCC (at line 150, column 63) in decl nil for
+	% term generated from card_ms_one_char  m
+	% expected type  finite_multiset
+	% Subtype TCC generated (at line 154, column 35) for  union(m, n)
+	% expected type  finite_multiset
+	  % untried
+	card_union_ms_TCC1: OBLIGATION
+	FORALL (m, n: multiset): is_finite(union(m, n))
+	
+	% The subtype TCC (at line 150, column 63) in decl nil for
+	 % term generated from card_ms_one_char  m
+	    % expected type  finite_multiset
+	  % is subsumed by card_ms_one_char_TCC1
+	
+	% The subtype TCC (at line 154, column 57) in decl nil for
+	% term generated from card_union_ms  m
+	% expected type  finite_multiset
+	% The subtype TCC (at line 154, column 70) in decl nil for
+	% term generated from card_union_ms  n
+	% expected type  finite_multiset
+	% Subtype TCC generated (at line 156, column 39) for  difference(m, n)
+	% expected type  finite_multiset
+	  % untried
+	card_difference_ms_TCC1: OBLIGATION
+	FORALL (m, n: multiset): is_finite(difference(m, n))
+	
+	% The subtype TCC (at line 154, column 57) in decl nil for
+	 % term generated from card_union_ms  m
+	    % expected type  finite_multiset
+	  % is subsumed by card_ms_one_char_TCC1
+	% The subtype TCC (at line 154, column 70) in decl nil for
+	 % term generated from card_union_ms  n
+	    % expected type  finite_multiset
+	  % is subsumed by card_ms_one_char_TCC1
+	
+	% Subtype TCC generated (at line 156, column 79) for  intersection(m, n)
+	% expected type  finite_multiset
+	  % untried
+	card_difference_ms_TCC2: OBLIGATION
+	FORALL (m, n: multiset): is_finite(intersection(m, n))
+	
+	% The subtype TCC (at line 156, column 66) in decl nil for
+	% term generated from card_difference_ms  m
+	% expected type  finite_multiset
+	% Subtype TCC generated (at line 169, column 86) for  n - m
 	% expected type  nat
 	  % untried
 	difference_singleton_w_rep_TCC1: OBLIGATION
 	FORALL (n, m: nat): n >= m IMPLIES n - m >= 0
 	
-	% Subtype TCC generated (at line 184, column 33) for  empty
+	% The subtype TCC (at line 156, column 66) in decl nil for
+	 % term generated from card_difference_ms  m
+	    % expected type  finite_multiset
+	  % is subsumed by card_ms_one_char_TCC1
+	
+	% Subtype TCC generated (at line 237, column 32) for  union(m, p)
 	% expected type  finite_multiset
 	  % untried
-	ms_ord_empty_TCC1: OBLIGATION
-	FORALL (m: finite_multiset): NOT m = empty IMPLIES is_finite(empty)
+	ms_ord_union_monotone_TCC1: OBLIGATION
+	FORALL (m, n, p: finite_multiset):
+	    ms_ord(m, n) IMPLIES is_finite(union(m, p))
+	
+	% Subtype TCC generated (at line 237, column 44) for  union(n, p)
+	% expected type  finite_multiset
+	  % untried
+	ms_ord_union_monotone_TCC2: OBLIGATION
+	FORALL (m, n, p: finite_multiset):
+	    ms_ord(m, n) IMPLIES is_finite(union(n, p))
 
 END multisets_nat_TCCS

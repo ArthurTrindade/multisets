@@ -1,1124 +1,1407 @@
-(|multisets_nat|
- (|difference_TCC1| 0
-  (|difference_TCC1-1| |nil| 3997831062 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|difference| SUBTYPE
+(multisets_nat
+ (difference_TCC1 0
+  (difference_TCC1-1 nil 3997831062 ("" (subtype-tcc) nil nil) nil nil
+   (difference subtype
     "(number_fields.-)(multisets_nat.m(multisets_nat.x), multisets_nat.n(multisets_nat.x))"
     "nat")))
- (|union_empty_left| 0
-  (|union_empty_left-1| |nil| 3998729819
-   ("" (SKEEP)
-    (("" (EXPAND "union")
-      (("" (EXPAND "empty") (("" (DECOMPOSE-EQUALITY) NIL NIL)) NIL)) NIL))
-    NIL)
-   NIL SHOSTAK))
- (|union_empty_right| 0
-  (|union_empty_right-1| |nil| 3998729846
-   ("" (SKEEP)
-    (("" (EXPAND "union")
-      (("" (EXPAND "empty") (("" (DECOMPOSE-EQUALITY) NIL NIL)) NIL)) NIL))
-    NIL)
-   NIL SHOSTAK))
- (|intersection_empty_left| 0
-  (|intersection_empty_left-1| |nil| 3998729872
-   ("" (SKEEP)
-    (("" (EXPAND "intersection")
-      (("" (EXPAND "empty")
-        (("" (DECOMPOSE-EQUALITY) (("" (SKEEP) (("" (ASSERT) NIL NIL)) NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|intersection_empty_right| 0
-  (|intersection_empty_right-1| |nil| 3998729907
-   ("" (SKEEP)
-    (("" (EXPAND "intersection")
-      (("" (EXPAND "empty")
-        (("" (DECOMPOSE-EQUALITY) (("" (SKEEP) (("" (ASSERT) NIL NIL)) NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|difference_empty_left| 0
-  (|difference_empty_left-1| |nil| 3998729933
-   ("" (SKEEP)
-    (("" (EXPAND "difference")
-      (("" (EXPAND "empty") (("" (DECOMPOSE-EQUALITY) NIL NIL)) NIL)) NIL))
-    NIL)
-   NIL SHOSTAK))
- (|difference_empty_right| 0
-  (|difference_empty_right-1| |nil| 3998729956
-   ("" (SKEEP)
-    (("" (EXPAND "difference")
-      (("" (EXPAND "empty")
-        (("" (DECOMPOSE-EQUALITY)
-          (("" (LIFT-IF)
-            (("" (SPLIT)
-              (("1" (PROPAX) NIL NIL)
-               ("2" (FLATTEN) (("2" (ASSERT) NIL NIL)) NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|difference_m_m_empty| 0
-  (|difference_m_m_empty-1| |nil| 3998999853
-   ("" (SKEEP) (("" (DECOMPOSE-EQUALITY) (("" (GRIND) NIL NIL)) NIL)) NIL) NIL
+ (union_empty_left 0
+  (union_empty_left-1 nil 3998729819
+   ("" (skeep)
+    (("" (expand "union")
+      (("" (expand "empty") (("" (decompose-equality) nil nil)) nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (union_empty_right 0
+  (union_empty_right-1 nil 3998729846
+   ("" (skeep)
+    (("" (expand "union")
+      (("" (expand "empty") (("" (decompose-equality) nil nil)) nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (intersection_empty_left 0
+  (intersection_empty_left-1 nil 3998729872
+   ("" (skeep)
+    (("" (expand "intersection")
+      (("" (expand "empty")
+        (("" (decompose-equality)
+          (("" (skeep) (("" (assert) nil nil)) nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (intersection_empty_right 0
+  (intersection_empty_right-1 nil 3998729907
+   ("" (skeep)
+    (("" (expand "intersection")
+      (("" (expand "empty")
+        (("" (decompose-equality)
+          (("" (skeep) (("" (assert) nil nil)) nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (difference_empty_left 0
+  (difference_empty_left-1 nil 3998729933
+   ("" (skeep)
+    (("" (expand "difference")
+      (("" (expand "empty") (("" (decompose-equality) nil nil)) nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (difference_empty_right 0
+  (difference_empty_right-1 nil 3998729956
+   ("" (skeep)
+    (("" (expand "difference")
+      (("" (expand "empty")
+        (("" (decompose-equality)
+          (("" (lift-if)
+            (("" (split)
+              (("1" (propax) nil nil)
+               ("2" (flatten) (("2" (assert) nil nil)) nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (difference_m_m_empty 0
+  (difference_m_m_empty-1 nil 3998999853
+   ("" (skeep) (("" (decompose-equality) (("" (grind) nil nil)) nil))
+    nil)
+   nil SHOSTAK))
+ (union_comm 0
+  (union_comm-1 nil 3998730139
+   ("" (skeep) (("" (expand "union") (("" (propax) nil nil)) nil)) nil)
+   nil SHOSTAK))
+ (union_assoc 0
+  (union_assoc-1 nil 3998730156
+   ("" (skeep) (("" (expand "union") (("" (propax) nil nil)) nil)) nil)
+   nil SHOSTAK))
+ (intersection_comm 0
+  (intersection_comm-1 nil 3998730176
+   ("" (skeep)
+    (("" (expand "intersection")
+      (("" (decompose-equality)
+        (("" (expand "min")
+          (("" (lift-if)
+            (("" (split)
+              (("1" (flatten)
+                (("1" (lift-if)
+                  (("1" (split)
+                    (("1" (flatten) (("1" (assert) nil nil)) nil)
+                     ("2" (propax) nil nil))
+                    nil))
+                  nil))
+                nil)
+               ("2" (flatten)
+                (("2" (lift-if)
+                  (("2" (split)
+                    (("1" (propax) nil nil)
+                     ("2" (flatten) (("2" (assert) nil nil)) nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (intersection_assoc 0
+  (intersection_assoc-1 nil 3998730242
+   ("" (skeep)
+    (("" (expand "intersection")
+      (("" (decompose-equality)
+        (("1" (expand "min")
+          (("1" (lift-if)
+            (("1" (split) (("1" (grind) nil nil) ("2" (grind) nil nil))
+              nil))
+            nil))
+          nil)
+         ("2" (skeep)
+          (("2" (split) (("1" (assert) nil nil) ("2" (grind) nil nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (subset_transitive 0
+  (subset_transitive-1 nil 3997968222
+   ("" (skeep)
+    (("" (expand "subset")
+      (("" (skeep)
+        (("" (inst -1 "x")
+          (("" (inst -2 "x") (("" (assert) nil nil)) nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (subset_union 0
+  (subset_union-1 nil 3998344246
+   ("" (skeep)
+    (("" (expand "union")
+      (("" (expand "subset") (("" (skeep) (("" (assert) nil nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (subset_intersection 0
+  (subset_intersection-1 nil 3998344313
+   ("" (skeep)
+    (("" (expand "intersection")
+      (("" (expand "subset") (("" (skeep) (("" (assert) nil nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (subset_difference 0
+  (subset_difference-1 nil 3998344375
+   ("" (skeep)
+    (("" (expand "subset")
+      (("" (skeep)
+        (("" (expand "difference")
+          (("" (lift-if)
+            (("" (split)
+              (("1" (flatten) (("1" (assert) nil nil)) nil)
+               ("2" (flatten) (("2" (assert) nil nil)) nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (empty_is_finite 0
+  (empty_is_finite-1 nil 3998730378
+   ("" (expand "is_finite")
+    (("" (inst 1 "emptyset[nat]")
+      (("" (split)
+        (("1" (grind) nil nil)
+         ("2" (skeep) (("2" (grind) nil nil)) nil))
+        nil))
+      nil))
+    nil)
+   ((finite_emptyset name-judgement "finite_set" finite_sets nil))
    SHOSTAK))
- (|union_comm| 0
-  (|union_comm-1| |nil| 3998730139
-   ("" (SKEEP) (("" (EXPAND "union") (("" (PROPAX) NIL NIL)) NIL)) NIL) NIL
-   SHOSTAK))
- (|union_assoc| 0
-  (|union_assoc-1| |nil| 3998730156
-   ("" (SKEEP) (("" (EXPAND "union") (("" (PROPAX) NIL NIL)) NIL)) NIL) NIL
-   SHOSTAK))
- (|intersection_comm| 0
-  (|intersection_comm-1| |nil| 3998730176
-   ("" (SKEEP)
-    (("" (EXPAND "intersection")
-      (("" (DECOMPOSE-EQUALITY)
-        (("" (EXPAND "min")
-          (("" (LIFT-IF)
-            (("" (SPLIT)
-              (("1" (FLATTEN)
-                (("1" (LIFT-IF)
-                  (("1" (SPLIT)
-                    (("1" (FLATTEN) (("1" (ASSERT) NIL NIL)) NIL)
-                     ("2" (PROPAX) NIL NIL))
-                    NIL))
-                  NIL))
-                NIL)
-               ("2" (FLATTEN)
-                (("2" (LIFT-IF)
-                  (("2" (SPLIT)
-                    (("1" (PROPAX) NIL NIL)
-                     ("2" (FLATTEN) (("2" (ASSERT) NIL NIL)) NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|intersection_assoc| 0
-  (|intersection_assoc-1| |nil| 3998730242
-   ("" (SKEEP)
-    (("" (EXPAND "intersection")
-      (("" (DECOMPOSE-EQUALITY)
-        (("1" (EXPAND "min")
-          (("1" (LIFT-IF)
-            (("1" (SPLIT) (("1" (GRIND) NIL NIL) ("2" (GRIND) NIL NIL)) NIL))
-            NIL))
-          NIL)
-         ("2" (SKEEP)
-          (("2" (SPLIT) (("1" (ASSERT) NIL NIL) ("2" (GRIND) NIL NIL)) NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|subset_transitive| 0
-  (|subset_transitive-1| |nil| 3997968222
-   ("" (SKEEP)
-    (("" (EXPAND "subset")
-      (("" (SKEEP)
-        (("" (INST -1 "x") (("" (INST -2 "x") (("" (ASSERT) NIL NIL)) NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|subset_union| 0
-  (|subset_union-1| |nil| 3998344246
-   ("" (SKEEP)
-    (("" (EXPAND "union")
-      (("" (EXPAND "subset") (("" (SKEEP) (("" (ASSERT) NIL NIL)) NIL)) NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|subset_intersection| 0
-  (|subset_intersection-1| |nil| 3998344313
-   ("" (SKEEP)
-    (("" (EXPAND "intersection")
-      (("" (EXPAND "subset") (("" (SKEEP) (("" (ASSERT) NIL NIL)) NIL)) NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|subset_difference| 0
-  (|subset_difference-1| |nil| 3998344375
-   ("" (SKEEP)
-    (("" (EXPAND "subset")
-      (("" (SKEEP)
-        (("" (EXPAND "difference")
-          (("" (LIFT-IF)
-            (("" (SPLIT)
-              (("1" (FLATTEN) (("1" (ASSERT) NIL NIL)) NIL)
-               ("2" (FLATTEN) (("2" (ASSERT) NIL NIL)) NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|empty_is_finite| 0
-  (|empty_is_finite-1| |nil| 3998730378
-   ("" (EXPAND "is_finite")
-    (("" (INST 1 "emptyset[nat]")
-      (("" (SPLIT)
-        (("1" (GRIND) NIL NIL) ("2" (SKEEP) (("2" (GRIND) NIL NIL)) NIL)) NIL))
-      NIL))
-    NIL)
-   ((|finite_emptyset| NAME-JUDGEMENT "finite_set" |finite_sets| NIL))
-   SHOSTAK))
- (|domain_TCC1| 0
-  (|domain_TCC1-1| |nil| 3997831062 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|domain| SUBTYPE "{n: naturalnumbers.nat | reals.>(multisets_nat.m(n), 0)}"
-    "finite_set[nat]")))
- (|singleton_ms_TCC1| 0
-  (|singleton_ms_TCC1-1| |nil| 3997831062 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|singleton_ms| SUBTYPE
+ (domain_TCC1 0
+  (domain_TCC1-1 nil 3997831062 ("" (subtype-tcc) nil nil) nil nil
+   (domain subtype
+           "{n: naturalnumbers.nat | reals.>(multisets_nat.m(n), 0)}"
+           "finite_set[nat]")))
+ (singleton_ms_TCC1 0
+  (singleton_ms_TCC1-1 nil 3997831062 ("" (subtype-tcc) nil nil) nil
+   nil
+   (singleton_ms subtype
     "(LAMBDA y: IF multisets_nat.x = multisets_nat.y THEN 1 ELSE 0 ENDIF)"
     "finite_multiset")))
- (|union_fin_ms_is_fin_ms| 0
-  (|union_fin_ms_is_fin_ms-1| |nil| 3998342657
-   ("" (SKEEP)
-    (("" (EXPAND "union")
-      (("" (EXPAND "is_finite")
-        (("" (TYPEPRED "m" "n")
-          (("" (EXPAND "is_finite" -)
-            (("" (SKOLEM -2 "S2")
-              (("" (SKOLEM -1 "S1")
-                (("" (INST 1 "union(S1, S2)")
-                  (("" (FLATTEN)
-                    (("" (SPLIT)
-                      (("1" (HIDE -2 -4)
-                        (("1" (REWRITE "finite_union") NIL NIL)) NIL)
-                       ("2" (HIDE -1 -3)
-                        (("2" (SKEEP)
-                          (("2" (INST?)
-                            (("2" (INST?) (("2" (GRIND) NIL NIL)) NIL)) NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((|finite_union| JUDGEMENT-TCC NIL |finite_sets| NIL)
-    (|is_finite| CONST-DECL "bool" |finite_sets| NIL)
-    (|finite_set| TYPE-EQ-DECL NIL |finite_sets| NIL))
+ (union_fin_ms_is_fin_ms 0
+  (union_fin_ms_is_fin_ms-1 nil 3998342657
+   ("" (skeep)
+    (("" (expand "union")
+      (("" (expand "is_finite")
+        (("" (typepred "m" "n")
+          (("" (expand "is_finite" -)
+            (("" (skolem -2 "S2")
+              (("" (skolem -1 "S1")
+                (("" (inst 1 "union(S1, S2)")
+                  (("" (flatten)
+                    (("" (split)
+                      (("1" (hide -2 -4)
+                        (("1" (rewrite "finite_union") nil nil)) nil)
+                       ("2" (hide -1 -3)
+                        (("2" (skeep)
+                          (("2" (inst?)
+                            (("2" (inst?) (("2" (grind) nil nil)) nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((finite_union judgement-tcc nil finite_sets nil)
+    (is_finite const-decl "bool" finite_sets nil)
+    (finite_set type-eq-decl nil finite_sets nil))
    SHOSTAK))
- (|intersection_fin_ms_is_fin_ms| 0
-  (|intersection_fin_ms_is_fin_ms-1| |nil| 3998343225
-   ("" (SKEEP)
-    (("" (TYPEPRED "m" "n")
-      (("" (EXPAND "is_finite" -)
-        (("" (SKOLEM -1 "S1")
-          (("" (SKOLEM -2 "S2")
-            (("" (EXPAND "is_finite" 1)
-              (("" (INST 1 "intersection(S1,S2)")
-                (("" (REWRITE "finite_intersection")
-                  (("" (FLATTEN)
-                    (("" (HIDE -1 -3)
-                      (("" (SKEEP)
-                        (("" (INST -1 "x")
-                          (("" (INST -2 "x") (("" (GRIND) NIL NIL)) NIL)) NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((|finite_set| TYPE-EQ-DECL NIL |finite_sets| NIL)
-    (|is_finite| CONST-DECL "bool" |finite_sets| NIL)
-    (|finite_intersection| FORMULA-DECL NIL |finite_sets| NIL))
+ (intersection_fin_ms_is_fin_ms 0
+  (intersection_fin_ms_is_fin_ms-1 nil 3998343225
+   ("" (skeep)
+    (("" (typepred "m" "n")
+      (("" (expand "is_finite" -)
+        (("" (skolem -1 "S1")
+          (("" (skolem -2 "S2")
+            (("" (expand "is_finite" 1)
+              (("" (inst 1 "intersection(S1,S2)")
+                (("" (rewrite "finite_intersection")
+                  (("" (flatten)
+                    (("" (hide -1 -3)
+                      (("" (skeep)
+                        (("" (inst -1 "x")
+                          (("" (inst -2 "x") (("" (grind) nil nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((finite_set type-eq-decl nil finite_sets nil)
+    (is_finite const-decl "bool" finite_sets nil)
+    (finite_intersection formula-decl nil finite_sets nil))
    SHOSTAK))
- (|intersection_with_fin_ms_is_fin_ms| 0
-  (|intersection_with_fin_ms_is_fin_ms-1| |nil| 3998344612
-   ("" (SKEEP)
-    (("" (TYPEPRED "m")
-      (("" (EXPAND "is_finite" -)
-        (("" (SKOLEM -1 "S1")
-          (("" (EXPAND "is_finite" 1)
-            (("" (INST 1 "S1")
-              (("" (PROP)
-                (("" (HIDE -1)
-                  (("" (SKEEP) (("" (INST -2 "x") (("" (GRIND) NIL NIL)) NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|subset_fin_ms_is_fin_ms| 0
-  (|subset_fin_ms_is_fin_ms-1| |nil| 3998343543
-   ("" (SKEEP)
-    (("" (TYPEPRED "n")
-      (("" (EXPAND "is_finite" -1)
-        (("" (SKOLEM -1 ("S1"))
-          (("" (FLATTEN)
-            (("" (EXPAND "is_finite" 1)
-              (("" (INST 1 "S1")
-                (("" (ASSERT)
-                  (("" (EXPAND "subset")
-                    (("" (SKEEP)
-                      (("" (INST -3 "x")
-                        (("" (INST -2 "x") (("" (ASSERT) NIL NIL)) NIL)) NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|difference_fin_ms_is_fin_ms| 0
-  (|difference_fin_ms_is_fin_ms-1| |nil| 3998344950
-   ("" (SKEEP)
-    (("" (TYPEPRED "m")
-      (("" (EXPAND "is_finite" -)
-        (("" (SKOLEM -1 ("S1"))
-          (("" (EXPAND "is_finite" 1)
-            (("" (INST?)
-              (("" (PROP)
-                (("" (SKEEP) (("" (INST?) (("" (GRIND) NIL NIL)) NIL)) NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((|is_finite| CONST-DECL "bool" |finite_sets| NIL)) SHOSTAK))
- (|singleton_w_rep_TCC1| 0
-  (|singleton_w_rep_TCC1-1| |nil| 3997831062 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|singleton_w_rep| SUBTYPE
+ (intersection_with_fin_ms_is_fin_ms 0
+  (intersection_with_fin_ms_is_fin_ms-1 nil 3998344612
+   ("" (skeep)
+    (("" (typepred "m")
+      (("" (expand "is_finite" -)
+        (("" (skolem -1 "S1")
+          (("" (expand "is_finite" 1)
+            (("" (inst 1 "S1")
+              (("" (prop)
+                (("" (hide -1)
+                  (("" (skeep)
+                    (("" (inst -2 "x") (("" (grind) nil nil)) nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (subset_fin_ms_is_fin_ms 0
+  (subset_fin_ms_is_fin_ms-1 nil 3998343543
+   ("" (skeep)
+    (("" (typepred "n")
+      (("" (expand "is_finite" -1)
+        (("" (skolem -1 ("S1"))
+          (("" (flatten)
+            (("" (expand "is_finite" 1)
+              (("" (inst 1 "S1")
+                (("" (assert)
+                  (("" (expand "subset")
+                    (("" (skeep)
+                      (("" (inst -3 "x")
+                        (("" (inst -2 "x") (("" (assert) nil nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (difference_fin_ms_is_fin_ms 0
+  (difference_fin_ms_is_fin_ms-1 nil 3998344950
+   ("" (skeep)
+    (("" (typepred "m")
+      (("" (expand "is_finite" -)
+        (("" (skolem -1 ("S1"))
+          (("" (expand "is_finite" 1)
+            (("" (inst?)
+              (("" (prop)
+                (("" (skeep) (("" (inst?) (("" (grind) nil nil)) nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((is_finite const-decl "bool" finite_sets nil)) SHOSTAK))
+ (singleton_w_rep_TCC1 0
+  (singleton_w_rep_TCC1-1 nil 3997831062 ("" (subtype-tcc) nil nil) nil
+   nil
+   (singleton_w_rep subtype
     "(LAMBDA y: IF multisets_nat.x = multisets_nat.y THEN multisets_nat.n ELSE 0 ENDIF)"
     "finite_multiset")))
- (|subset_ms_subset_dom_TCC1| 0
-  (|subset_ms_subset_dom_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL (|subset_ms_subset_dom| SUBTYPE "multisets_nat.m" "finite_multiset")))
- (|subset_ms_subset_dom_TCC2| 0
-  (|subset_ms_subset_dom_TCC2-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL (|subset_ms_subset_dom| SUBTYPE "multisets_nat.n" "finite_multiset")))
- (|subset_ms_subset_diff_singl_TCC1| 0
-  (|subset_ms_subset_diff_singl_TCC1-1| NIL 3999604636
-   ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|subset_ms_subset_diff_singl| SUBTYPE
+ (subset_ms_subset_dom_TCC1 0
+  (subset_ms_subset_dom_TCC1-1 nil 3999604636
+   ("" (subtype-tcc) nil nil) nil nil
+   (subset_ms_subset_dom subtype "multisets_nat.m" "finite_multiset")))
+ (subset_ms_subset_dom_TCC2 0
+  (subset_ms_subset_dom_TCC2-1 nil 3999604636
+   ("" (subtype-tcc) nil nil) nil nil
+   (subset_ms_subset_dom subtype "multisets_nat.n" "finite_multiset")))
+ (subset_ms_subset_diff_singl_TCC1 0
+  (subset_ms_subset_diff_singl_TCC1-1 nil 3999604636
+   ("" (subtype-tcc) nil nil) nil nil
+   (subset_ms_subset_diff_singl subtype
     "multisets_nat.domain(multisets_nat.m)" "(sets[nat].nonempty?)")))
- (|occurrences_TCC1| 0
-  (|occurrences_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|occurrences| SUBTYPE "multisets_nat.mp" "finite_multiset")))
- (|occurrences_TCC2| 0
-  (|occurrences_TCC2-1| NIL 3999604636 ("" (TERMINATION-TCC) NIL NIL) NIL NIL
-   (|occurrences| TERMINATION "multisets_nat.occurrences(multisets_nat.mp)"
-    "NIL")))
- (|occurrences_TCC3| 0
-  (|occurrences_TCC3-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|occurrences| SUBTYPE "multisets_nat.domain(multisets_nat.m)"
+ (occurrences_TCC1 0
+  (occurrences_TCC1-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil nil
+   (occurrences subtype "multisets_nat.mp" "finite_multiset")))
+ (occurrences_TCC2 0
+  (occurrences_TCC2-1 nil 3999604636 ("" (termination-tcc) nil nil) nil
+   nil
+   (occurrences termination
+    "multisets_nat.occurrences(multisets_nat.mp)" "nil")))
+ (occurrences_TCC3 0
+  (occurrences_TCC3-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil nil
+   (occurrences subtype "multisets_nat.domain(multisets_nat.m)"
     "(sets[nat].nonempty?)")))
- (|card_ms_TCC1| 0
-  (|card_ms_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|card_ms| SUBTYPE
+ (card_ms_TCC1 0
+  (card_ms_TCC1-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil nil
+   (card_ms subtype
     "(number_fields.-)(multisets_nat.occurrences(multisets_nat.m), 1)"
     "naturalnumber")))
- (|card_ms_TCC2| 0
-  (|card_ms_TCC2-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|card_ms| SUBTYPE "multisets_nat.mp" "finite_multiset")))
- (|card_ms_TCC3| 0
-  (|card_ms_TCC3-1| NIL 3999604636 ("" (TERMINATION-TCC) NIL NIL) NIL NIL
-   (|card_ms| TERMINATION "multisets_nat.card_ms(multisets_nat.mp)" "NIL")))
- (|card_empty_ms_TCC1| 0
-  (|card_empty_ms_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|card_empty_ms| SUBTYPE "multisets_nat.empty" "finite_multiset")))
- (|card_ms_one_char_TCC1| 0
-  (|card_ms_one_char_TCC1-1| NIL 3999605785 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|card_ms_one_char| SUBTYPE "multisets_nat.m" "finite_multiset")))
- (|card_union_ms_TCC1| 0
-  (|card_union_ms_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|card_union_ms| SUBTYPE
+ (card_ms_TCC2 0
+  (card_ms_TCC2-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil nil
+   (card_ms subtype "multisets_nat.mp" "finite_multiset")))
+ (card_ms_TCC3 0
+  (card_ms_TCC3-1 nil 3999604636 ("" (termination-tcc) nil nil) nil nil
+   (card_ms termination "multisets_nat.card_ms(multisets_nat.mp)"
+    "nil")))
+ (card_empty_ms_TCC1 0
+  (card_empty_ms_TCC1-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil
+   nil
+   (card_empty_ms subtype "multisets_nat.empty" "finite_multiset")))
+ (card_ms_one_char_TCC1 0
+  (card_ms_one_char_TCC1-1 nil 3999605785 ("" (subtype-tcc) nil nil)
+   nil nil
+   (card_ms_one_char subtype "multisets_nat.m" "finite_multiset")))
+ (card_union_ms_TCC1 0
+  (card_union_ms_TCC1-1 nil 3999604636 ("" (subtype-tcc) nil nil) nil
+   nil
+   (card_union_ms subtype
     "multisets_nat.union(multisets_nat.m, multisets_nat.n)"
     "finite_multiset")))
- (|card_difference_ms_TCC1| 0
-  (|card_difference_ms_TCC1-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL
-   (|card_difference_ms| SUBTYPE
+ (card_difference_ms_TCC1 0
+  (card_difference_ms_TCC1-1 nil 3999604636 ("" (subtype-tcc) nil nil)
+   nil nil
+   (card_difference_ms subtype
     "multisets_nat.difference(multisets_nat.m, multisets_nat.n)"
     "finite_multiset")))
- (|card_difference_ms_TCC2| 0
-  (|card_difference_ms_TCC2-1| NIL 3999604636 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL
-   (|card_difference_ms| SUBTYPE
+ (card_difference_ms_TCC2 0
+  (card_difference_ms_TCC2-1 nil 3999604636 ("" (subtype-tcc) nil nil)
+   nil nil
+   (card_difference_ms subtype
     "multisets_nat.intersection(multisets_nat.m, multisets_nat.n)"
     "finite_multiset")))
- (|difference_singleton_w_rep_TCC1| 0
-  (|difference_singleton_w_rep_TCC1-1| |nil| 3997831062
-   ("" (SUBTYPE-TCC) NIL NIL) NIL NIL
-   (|difference_singleton_w_rep| SUBTYPE
+ (difference_singleton_w_rep_TCC1 0
+  (difference_singleton_w_rep_TCC1-1 nil 3997831062
+   ("" (subtype-tcc) nil nil) nil nil
+   (difference_singleton_w_rep subtype
     "(number_fields.-)(multisets_nat.n, multisets_nat.m)" "nat")))
- (|subset_singleton| 0
-  (|subset_singleton-1| |nil| 3999000069
-   ("" (SKEEP)
-    (("" (SPLIT)
-      (("1" (PROP)
-        (("1" (EXPAND "singleton_ms" -1)
-          (("1" (EXPAND "subset")
-            (("1" (DECOMPOSE-EQUALITY (1 2))
-              (("1" (DECOMPOSE-EQUALITY 2)
-                (("1" (INST-CP -1 X!2)
-                  (("1" (EXPAND "singleton_ms")
-                    (("1" (INST -1 X!1) (("1" (GRIND) NIL NIL)) NIL)) NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL)
-       ("2" (PROP)
-        (("1" (REPLACES -1) (("1" (GRIND) NIL NIL)) NIL)
-         ("2" (REPLACES -1) (("2" (GRIND) NIL NIL)) NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|ms_ord_one_subset_tc| 0
-  (|ms_ord_one_subset_tc-1| |nil| 3997831077
+ (subset_singleton 0
+  (subset_singleton-1 nil 3999000069
+   ("" (skeep)
+    (("" (split)
+      (("1" (prop)
+        (("1" (expand "singleton_ms" -1)
+          (("1" (expand "subset")
+            (("1" (decompose-equality (1 2))
+              (("1" (decompose-equality 2)
+                (("1" (inst-cp -1 x!2)
+                  (("1" (expand "singleton_ms")
+                    (("1" (inst -1 x!1) (("1" (grind) nil nil)) nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil)
+       ("2" (prop)
+        (("1" (replaces -1) (("1" (grind) nil nil)) nil)
+         ("2" (replaces -1) (("2" (grind) nil nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (ms_ord_one_subset_tc 0
+  (ms_ord_one_subset_tc-1 nil 3997831077
    (""
-    (CASE
-        "FORALL(i: posnat, A,B:finite_multiset) : iterate[finite_multiset](ms_ord_one, i)(A, B) IMPLIES ms_ord(A, B)")
-    (("1" (EXPAND "TC")
-      (("1" (EXPAND "IUnion")
-        (("1" (EXPAND "subset?")
-          (("1" (SKEEP)
-            (("1" (EXPAND "member")
-              (("1" (SKEEP)
-                (("1" (INST -1 "i" "x_1`1" "x_1`2") (("1" (ASSERT) NIL NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL)
-     ("2" (HIDE 2)
-      (("2" (INDUCT "i")
-        (("1" (TYPEPRED "i!1") (("1" (PROPAX) NIL NIL)) NIL)
-         ("2" (ASSERT) NIL NIL)
-         ("3" (SKEEP)
-          (("3" (PROP)
-            (("1" (SKEEP)
-              (("1" (EXPAND "iterate" -3)
-                (("1" (EXPAND "o ")
-                  (("1" (SKOLEM -3 ("C"))
-                    (("1" (INST -1 "A" "C")
-                      (("1" (ASSERT)
-                        (("1" (PROP)
-                          (("1" (HIDE -3)
-                            (("1" (EXPAND "ms_ord" -1)
-                              (("1" (SKOLEM -1 ("X1" "Y1"))
-                                (("1" (PROP)
-                                  (("1" (EXPAND "ms_ord_one")
-                                    (("1" (SKOLEM -5 ("x2" "Y2"))
-                                      (("1" (PROP)
-                                        (("1" (EXPAND "ms_ord")
+    (case "FORALL(i: posnat, A,B:finite_multiset) : iterate[finite_multiset](ms_ord_one, i)(A, B) IMPLIES ms_ord(A, B)")
+    (("1" (expand "TC")
+      (("1" (expand "IUnion")
+        (("1" (expand "subset?")
+          (("1" (skeep)
+            (("1" (expand "member")
+              (("1" (skeep)
+                (("1" (inst -1 "i" "x_1`1" "x_1`2")
+                  (("1" (assert) nil nil)) nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil)
+     ("2" (hide 2)
+      (("2" (induct "i")
+        (("1" (typepred "i!1") (("1" (propax) nil nil)) nil)
+         ("2" (assert) nil nil)
+         ("3" (skeep)
+          (("3" (prop)
+            (("1" (skeep)
+              (("1" (expand "iterate" -3)
+                (("1" (expand "o ")
+                  (("1" (skolem -3 ("C"))
+                    (("1" (inst -1 "A" "C")
+                      (("1" (assert)
+                        (("1" (prop)
+                          (("1" (hide -3)
+                            (("1" (expand "ms_ord" -1)
+                              (("1"
+                                (skolem -1 ("X1" "Y1"))
+                                (("1"
+                                  (prop)
+                                  (("1"
+                                    (expand "ms_ord_one")
+                                    (("1"
+                                      (skolem -5 ("x2" "Y2"))
+                                      (("1"
+                                        (prop)
+                                        (("1"
+                                          (expand "ms_ord")
                                           (("1"
-                                            (CASE
-                                                "member(x2, difference(A, X1)) OR member(x2,Y1)")
-                                            (("1" (PROP)
+                                            (case
+                                             "member(x2, difference(A, X1)) OR member(x2,Y1)")
+                                            (("1"
+                                              (prop)
                                               (("1"
-                                                (INST 2
+                                                (inst
+                                                 2
                                                  "union(X1,singleton_ms(x2))"
                                                  "union(Y1,Y2)")
-                                                (("1" (PROP)
+                                                (("1"
+                                                  (prop)
                                                   (("1"
-                                                    (HIDE-ALL-BUT (-1 -2 1 2))
-                                                    (("1" (EXPAND "subset" 1)
-                                                      (("1" (SKEEP)
-                                                        (("1" (EXPAND "union")
+                                                    (hide-all-but
+                                                     (-1 -2 1 2))
+                                                    (("1"
+                                                      (expand
+                                                       "subset"
+                                                       1)
+                                                      (("1"
+                                                        (skeep)
+                                                        (("1"
+                                                          (expand
+                                                           "union")
                                                           (("1"
-                                                            (EXPAND "member")
+                                                            (expand
+                                                             "member")
                                                             (("1"
-                                                              (EXPAND
+                                                              (expand
                                                                "difference")
                                                               (("1"
-                                                                (EXPAND
+                                                                (expand
                                                                  "subset")
                                                                 (("1"
-                                                                  (INST -2 "x")
+                                                                  (inst
+                                                                   -2
+                                                                   "x")
                                                                   (("1"
-                                                                    (CASE
-                                                                        "x = x2")
+                                                                    (case
+                                                                     "x = x2")
                                                                     (("1"
-                                                                      (REPLACES
+                                                                      (replaces
                                                                        -1)
                                                                       (("1"
-                                                                        (GRIND)
-                                                                        NIL
-                                                                        NIL))
-                                                                      NIL)
+                                                                        (grind)
+                                                                        nil
+                                                                        nil))
+                                                                      nil)
                                                                      ("2"
-                                                                      (GRIND)
-                                                                      NIL NIL))
-                                                                    NIL))
-                                                                  NIL))
-                                                                NIL))
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL)
-                                                   ("2" (HIDE-ALL-BUT (-1))
-                                                    (("2" (DECOMPOSE-EQUALITY)
-                                                      (("2" (INST -1 "x2")
-                                                        (("2" (GRIND) NIL NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL)
-                                                   ("3" (HIDE -4 -5 -8)
+                                                                      (grind)
+                                                                      nil
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil)
+                                                   ("2"
+                                                    (hide-all-but (-1))
+                                                    (("2"
+                                                      (decompose-equality)
+                                                      (("2"
+                                                        (inst -1 "x2")
+                                                        (("2"
+                                                          (grind)
+                                                          nil
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil)
+                                                   ("3"
+                                                    (hide -4 -5 -8)
                                                     (("3"
-                                                      (DECOMPOSE-EQUALITY 1)
-                                                      (("3" (EXPAND "union")
+                                                      (decompose-equality
+                                                       1)
+                                                      (("3"
+                                                        (expand
+                                                         "union")
                                                         (("3"
-                                                          (EXPAND "difference")
+                                                          (expand
+                                                           "difference")
                                                           (("3"
-                                                            (EXPAND
+                                                            (expand
                                                              "singleton_ms")
                                                             (("3"
-                                                              (EXPAND "member")
+                                                              (expand
+                                                               "member")
                                                               (("3"
-                                                                (EXPAND
+                                                                (expand
                                                                  "subset")
-                                                                (("3" (GRIND)
-                                                                  NIL NIL))
-                                                                NIL))
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL)
-                                                   ("4" (SKEEP 1)
-                                                    (("4" (EXPAND "member" -1)
+                                                                (("3"
+                                                                  (grind)
+                                                                  nil
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil)
+                                                   ("4"
+                                                    (skeep 1)
+                                                    (("4"
+                                                      (expand
+                                                       "member"
+                                                       -1)
                                                       (("4"
-                                                        (HIDE-ALL-BUT
+                                                        (hide-all-but
                                                          (-1 -5 -9 1))
-                                                        (("4" (INST? -2)
-                                                          (("4" (INST? -3)
+                                                        (("4"
+                                                          (inst? -2)
+                                                          (("4"
+                                                            (inst? -3)
                                                             (("4"
-                                                              (EXPAND "member"
-                                                                      -2 1)
+                                                              (expand
+                                                               "member"
+                                                               -2
+                                                               1)
                                                               (("4"
-                                                                (EXPAND
-                                                                 "member" -3)
+                                                                (expand
+                                                                 "member"
+                                                                 -3)
                                                                 (("4"
-                                                                  (EXPAND
-                                                                   "union" -1)
+                                                                  (expand
+                                                                   "union"
+                                                                   -1)
                                                                   (("4"
-                                                                    (CASE
-                                                                        "Y1(y)>0")
+                                                                    (case
+                                                                     "Y1(y)>0")
                                                                     (("1"
-                                                                      (ASSERT)
+                                                                      (assert)
                                                                       (("1"
-                                                                        (SKEEP)
+                                                                        (skeep)
                                                                         (("1"
-                                                                          (INST?)
+                                                                          (inst?)
                                                                           (("1"
-                                                                            (EXPAND
+                                                                            (expand
                                                                              "member")
                                                                             (("1"
-                                                                              (EXPAND
+                                                                              (expand
                                                                                "singleton_ms")
                                                                               (("1"
-                                                                                (EXPAND
+                                                                                (expand
                                                                                  "union")
                                                                                 (("1"
-                                                                                  (GRIND)
-                                                                                  NIL
-                                                                                  NIL))
-                                                                                NIL))
-                                                                              NIL))
-                                                                            NIL))
-                                                                          NIL))
-                                                                        NIL))
-                                                                      NIL)
+                                                                                  (grind)
+                                                                                  nil
+                                                                                  nil))
+                                                                                nil))
+                                                                              nil))
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil)
                                                                      ("2"
-                                                                      (ASSERT)
+                                                                      (assert)
                                                                       (("2"
-                                                                        (INST?)
+                                                                        (inst?)
                                                                         (("2"
-                                                                          (GRIND)
-                                                                          NIL
-                                                                          NIL))
-                                                                        NIL))
-                                                                      NIL))
-                                                                    NIL))
-                                                                  NIL))
-                                                                NIL))
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL))
-                                                  NIL)
+                                                                          (grind)
+                                                                          nil
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil)
                                                  ("2"
-                                                  (REWRITE
+                                                  (rewrite
                                                    "union_fin_ms_is_fin_ms")
-                                                  NIL NIL)
+                                                  nil
+                                                  nil)
                                                  ("3"
-                                                  (REWRITE
+                                                  (rewrite
                                                    "union_fin_ms_is_fin_ms")
-                                                  NIL NIL))
-                                                NIL)
+                                                  nil
+                                                  nil))
+                                                nil)
                                                ("2"
-                                                (INST 2 "X1"
+                                                (inst
+                                                 2
+                                                 "X1"
                                                  "union(difference(Y1,singleton_ms(x2)),Y2)")
-                                                (("1" (PROP)
-                                                  (("1" (HIDE -2 -4 -5 -8)
-                                                    (("1" (EXPAND "member")
+                                                (("1"
+                                                  (prop)
+                                                  (("1"
+                                                    (hide -2 -4 -5 -8)
+                                                    (("1"
+                                                      (expand "member")
                                                       (("1"
-                                                        (DECOMPOSE-EQUALITY 1)
-                                                        (("1" (REPLACES -4 1)
-                                                          (("1" (REPLACES -2)
-                                                            (("1" (GRIND) NIL
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL)
-                                                   ("2" (SKEEP)
-                                                    (("2" (EXPAND "union" -1)
-                                                      (("2"
-                                                        (EXPAND "member" -1)
-                                                        (("2"
-                                                          (CASE
-                                                              "difference(Y1, singleton_ms(x2))(y) >0")
-                                                          (("1" (INST? -6)
+                                                        (decompose-equality
+                                                         1)
+                                                        (("1"
+                                                          (replaces
+                                                           -4
+                                                           1)
+                                                          (("1"
+                                                            (replaces
+                                                             -2)
                                                             (("1"
-                                                              (EXPAND "member"
-                                                                      -6)
+                                                              (grind)
+                                                              nil
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil)
+                                                   ("2"
+                                                    (skeep)
+                                                    (("2"
+                                                      (expand
+                                                       "union"
+                                                       -1)
+                                                      (("2"
+                                                        (expand
+                                                         "member"
+                                                         -1)
+                                                        (("2"
+                                                          (case
+                                                           "difference(Y1, singleton_ms(x2))(y) >0")
+                                                          (("1"
+                                                            (inst? -6)
+                                                            (("1"
+                                                              (expand
+                                                               "member"
+                                                               -6)
                                                               (("1"
-                                                                (EXPAND
+                                                                (expand
                                                                  "difference"
                                                                  -1)
-                                                                (("1" (PROP)
+                                                                (("1"
+                                                                  (prop)
                                                                   (("1"
-                                                                    (SKEEP -1)
+                                                                    (skeep
+                                                                     -1)
                                                                     (("1"
-                                                                      (INST? 1)
+                                                                      (inst?
+                                                                       1)
                                                                       (("1"
-                                                                        (EXPAND
+                                                                        (expand
                                                                          "member")
                                                                         (("1"
-                                                                          (ASSERT)
-                                                                          NIL
-                                                                          NIL))
-                                                                        NIL))
-                                                                      NIL))
-                                                                    NIL)
-                                                                   ("2" (GRIND)
-                                                                    NIL NIL))
-                                                                  NIL))
-                                                                NIL))
-                                                              NIL))
-                                                            NIL)
+                                                                          (assert)
+                                                                          nil
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil)
+                                                                   ("2"
+                                                                    (grind)
+                                                                    nil
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil)
                                                            ("2"
-                                                            (CASE "Y2(y) > 0")
+                                                            (case
+                                                             "Y2(y) > 0")
                                                             (("1"
-                                                              (HIDE-ALL-BUT
-                                                               (-1 -3 -6 -10 2
+                                                              (hide-all-but
+                                                               (-1
+                                                                -3
+                                                                -6
+                                                                -10
+                                                                2
                                                                 3))
                                                               (("1"
-                                                                (INST -3 "x2")
-                                                                (("1" (ASSERT)
-                                                                  (("1" (SKEEP)
+                                                                (inst
+                                                                 -3
+                                                                 "x2")
+                                                                (("1"
+                                                                  (assert)
+                                                                  (("1"
+                                                                    (skeep)
                                                                     (("1"
-                                                                      (INST?
+                                                                      (inst?
                                                                        -5)
                                                                       (("1"
-                                                                        (INST 1
+                                                                        (inst
+                                                                         1
                                                                          "x")
                                                                         (("1"
-                                                                          (ASSERT)
+                                                                          (assert)
                                                                           (("1"
-                                                                            (GRIND)
-                                                                            NIL
-                                                                            NIL))
-                                                                          NIL))
-                                                                        NIL))
-                                                                      NIL))
-                                                                    NIL))
-                                                                  NIL))
-                                                                NIL))
-                                                              NIL)
+                                                                            (grind)
+                                                                            nil
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil)
                                                              ("2"
-                                                              (HIDE-ALL-BUT
-                                                               (-1 1 2))
-                                                              (("2" (GRIND) NIL
-                                                                NIL))
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL))
-                                                  NIL)
-                                                 ("2" (HIDE-ALL-BUT 1)
+                                                              (hide-all-but
+                                                               (-1
+                                                                1
+                                                                2))
+                                                              (("2"
+                                                                (grind)
+                                                                nil
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil)
+                                                 ("2"
+                                                  (hide-all-but 1)
                                                   (("2"
-                                                    (REWRITE
+                                                    (rewrite
                                                      "union_fin_ms_is_fin_ms")
                                                     (("2"
-                                                      (REWRITE
+                                                      (rewrite
                                                        "difference_fin_ms_is_fin_ms")
-                                                      NIL NIL))
-                                                    NIL))
-                                                  NIL))
-                                                NIL))
-                                              NIL)
-                                             ("2" (HIDE -3 -4 -7 3)
-                                              (("2" (FLATTEN)
-                                                (("2" (EXPAND "member")
-                                                  (("2" (EXPAND "difference")
-                                                    (("2" (EXPAND "subset")
-                                                      (("2" (GRIND) NIL NIL))
-                                                      NIL))
-                                                    NIL))
-                                                  NIL))
-                                                NIL))
-                                              NIL))
-                                            NIL))
-                                          NIL))
-                                        NIL))
-                                      NIL))
-                                    NIL))
-                                  NIL))
-                                NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL)
-             ("2" (CASE-REPLACE "j=0")
-              (("1" (ASSERT)
-                (("1" (EXPAND "iterate")
-                  (("1" (EXPAND "iterate")
-                    (("1" (EXPAND "o ")
-                      (("1" (SKEEP)
-                        (("1" (SKEEP)
-                          (("1" (ASSERT)
-                            (("1" (LEMMA "ms_ord_one_subset_ms_ord")
-                              (("1" (EXPAND "subset?")
-                                (("1" (INST -1 "(A, B)")
-                                  (("1" (EXPAND "member")
-                                    (("1" (PROPAX) NIL NIL)) NIL))
-                                  NIL))
-                                NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL)
-               ("2" (ASSERT) NIL NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((TC CONST-DECL "transitive" |relations_closure| TRS)
-    (|iterate| DEF-DECL "pred[[T, T]]" |relation_iterate| |orders|))
+                                                      nil
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil)
+                                             ("2"
+                                              (hide -3 -4 -7 3)
+                                              (("2"
+                                                (flatten)
+                                                (("2"
+                                                  (expand "member")
+                                                  (("2"
+                                                    (expand
+                                                     "difference")
+                                                    (("2"
+                                                      (expand "subset")
+                                                      (("2"
+                                                        (grind)
+                                                        nil
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil)
+             ("2" (case-replace "j=0")
+              (("1" (assert)
+                (("1" (expand "iterate")
+                  (("1" (expand "iterate")
+                    (("1" (expand "o ")
+                      (("1" (skeep)
+                        (("1" (skeep)
+                          (("1" (assert)
+                            (("1" (lemma "ms_ord_one_subset_ms_ord")
+                              (("1"
+                                (expand "subset?")
+                                (("1"
+                                  (inst -1 "(A, B)")
+                                  (("1"
+                                    (expand "member")
+                                    (("1" (propax) nil nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil)
+               ("2" (assert) nil nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((TC const-decl "transitive" relations_closure TRS)
+    (iterate def-decl "pred[[T, T]]" relation_iterate orders))
    SHOSTAK))
- (|ms_ord_subset_ms_ord_one_tc| 0
-  (|ms_ord_subset_ms_ord_one_tc-1| NIL 3999604660
-   ("" (EXPAND "ms_ord")
-    (("" (EXPAND "subset?")
-      (("" (SKEEP)
-        (("" (EXPAND "member")
-          (("" (SKEEP)
+ (ms_ord_subset_ms_ord_one_tc 0
+  (ms_ord_subset_ms_ord_one_tc-1 nil 3999604660
+   ("" (expand "ms_ord")
+    (("" (expand "subset?")
+      (("" (skeep)
+        (("" (expand "member")
+          (("" (skeep)
             ((""
-              (CASE "FORALL(A, B, X, Y: finite_multiset) : (
-             (NOT X = empty) AND 
-             subset(X,A) AND
-             B = union(difference(A, X), Y) AND
-             FORALL y: Y(y) > 0 => EXISTS x: X(x) > 0 AND y < x) IMPLIES 
-             TC(ms_ord_one)(A,B)")
-              (("1" (INST -1 "x_1`1" "x_1`2" "X" "Y") (("1" (ASSERT) NIL NIL))
-                NIL)
-               ("2" (HIDE-ALL-BUT 1)
-                (("2" (MEASURE-INDUCT+ "card_ms(X)" ("X"))
-                  (("2" (CASE "card_ms(x!1) = 0")
-                    (("1" (HIDE -2) (("1" (GRIND) NIL NIL)) NIL)
-                     ("2" (CASE "card_ms(x!1) = 1")
-                      (("1" (HIDE -2)
-                        (("1" (SKEEP)
-                          (("1" (EXPAND "TC")
-                            (("1" (EXPAND "IUnion")
-                              (("1" (INST 3 "1")
-                                (("1" (EXPAND "iterate")
-                                  (("1" (EXPAND "iterate")
-                                    (("1" (EXPAND "o ")
-                                      (("1" (INST 3 "A")
-                                        (("1" (EXPAND "ms_ord_one")
-                                          (("1" (REWRITE "card_ms_one_char")
-                                            (("1" (EXPAND "is_singleton")
-                                              (("1" (SKEEP)
-                                                (("1" (INST 3 "x" "Y!1")
-                                                  (("1" (PROP)
+              (case "FORALL(A, B, X, Y: finite_multiset) : ( (NOT X = empty) AND subset(X,A) AND B = union(difference(A, X), Y) AND FORALL y: Y(y) > 0 => EXISTS x: X(x) > 0 AND y < x) IMPLIES TC(ms_ord_one)(A,B)")
+              (("1" (inst -1 "x_1`1" "x_1`2" "X" "Y")
+                (("1" (assert) nil nil)) nil)
+               ("2" (hide-all-but 1)
+                (("2" (measure-induct+ "card_ms(X)" ("X"))
+                  (("2" (case "card_ms(x!1) = 0")
+                    (("1" (hide -2) (("1" (grind) nil nil)) nil)
+                     ("2" (case "card_ms(x!1) = 1")
+                      (("1" (hide -2)
+                        (("1" (skeep)
+                          (("1" (expand "TC")
+                            (("1" (expand "IUnion")
+                              (("1"
+                                (inst 3 "1")
+                                (("1"
+                                  (expand "iterate")
+                                  (("1"
+                                    (expand "iterate")
+                                    (("1"
+                                      (expand "o ")
+                                      (("1"
+                                        (inst 3 "A")
+                                        (("1"
+                                          (expand "ms_ord_one")
+                                          (("1"
+                                            (rewrite
+                                             "card_ms_one_char")
+                                            (("1"
+                                              (expand "is_singleton")
+                                              (("1"
+                                                (skeep)
+                                                (("1"
+                                                  (inst 3 "x" "Y!1")
+                                                  (("1"
+                                                    (prop)
                                                     (("1"
-                                                      (HIDE-ALL-BUT (-1 -2 1))
-                                                      (("1" (GRIND) NIL NIL))
-                                                      NIL)
-                                                     ("2" (ASSERT) NIL NIL)
-                                                     ("3" (SKEEP)
-                                                      (("3" (INST?)
-                                                        (("3" (EXPAND "member")
-                                                          (("3" (ASSERT)
-                                                            (("3" (SKEEP)
-                                                              (("3" (GRIND) NIL
-                                                                NIL))
-                                                              NIL))
-                                                            NIL))
-                                                          NIL))
-                                                        NIL))
-                                                      NIL))
-                                                    NIL))
-                                                  NIL))
-                                                NIL))
-                                              NIL))
-                                            NIL))
-                                          NIL))
-                                        NIL))
-                                      NIL))
-                                    NIL))
-                                  NIL))
-                                NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL)
-                       ("2" (POSTPONE) NIL NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|ms_ord_equal_ms_ord_one_tc| 0
-  (|ms_ord_equal_ms_ord_one_tc-1| NIL 3999169655
-   ("" (LEMMA " ms_ord_one_subset_tc")
-    (("" (LEMMA " ms_ord_subset_ms_ord_one_tc")
-      (("" (DECOMPOSE-EQUALITY 1)
-        (("" (IFF)
-          (("" (PROP)
-            (("1" (HIDE -3)
-              (("1" (EXPAND "subset?")
-                (("1" (INST -2 "(x!1, x!2)")
-                  (("1" (ASSERT)
-                    (("1" (EXPAND "member") (("1" (PROPAX) NIL NIL)) NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL)
-             ("2" (HIDE -2)
-              (("2" (EXPAND "subset?")
-                (("2" (INST -2 "(x!1, x!2)")
-                  (("2" (EXPAND "member") (("2" (ASSERT) NIL NIL)) NIL)) NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((TC CONST-DECL "transitive" |relations_closure| TRS)
-    (|transitive| TYPE-EQ-DECL NIL |relations_closure| TRS)
-    (|transitive?| CONST-DECL "bool" |relations| NIL)
-    (|subset_is_partial_order| NAME-JUDGEMENT "(partial_order?[set[T]])"
-     |sets_lemmas| NIL))
+                                                      (hide-all-but
+                                                       (-1 -2 1))
+                                                      (("1"
+                                                        (grind)
+                                                        nil
+                                                        nil))
+                                                      nil)
+                                                     ("2"
+                                                      (assert)
+                                                      nil
+                                                      nil)
+                                                     ("3"
+                                                      (skeep)
+                                                      (("3"
+                                                        (inst?)
+                                                        (("3"
+                                                          (expand
+                                                           "member")
+                                                          (("3"
+                                                            (assert)
+                                                            (("3"
+                                                              (skeep)
+                                                              (("3"
+                                                                (grind)
+                                                                nil
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil)
+                       ("2" (name-replace "n" "choose(domain(x!1))")
+                        (("1"
+                          (name-replace "Xp"
+                           "difference(x!1,singleton_ms(n))")
+                          (("1"
+                            (name-replace "Yp"
+                             "LAMBDA(i:nat) : IF member(i,domain(Y)) AND i >= n THEN Y(i) ELSE 0 ENDIF")
+                            (("1" (skeep)
+                              (("1"
+                                (expand "TC " 4)
+                                (("1"
+                                  (expand "IUnion")
+                                  (("1"
+                                    (inst -4 "Xp")
+                                    (("1"
+                                      (inst
+                                       -4
+                                       "union(difference(A,singleton_ms(n)),difference(Y,Yp))"
+                                       "B"
+                                       "Yp")
+                                      (("1"
+                                        (prop)
+                                        (("1"
+                                          (expand "TC" -1)
+                                          (("1"
+                                            (expand "IUnion" -1)
+                                            (("1"
+                                              (skeep)
+                                              (("1"
+                                                (inst 4 "i+1")
+                                                (("1"
+                                                  (lemma
+                                                   " iterate_add")
+                                                  (("1"
+                                                    (inst
+                                                     -1
+                                                     "ms_ord_one"
+                                                     "1"
+                                                     "i")
+                                                    (("1"
+                                                      (replace -1 4)
+                                                      (("1"
+                                                        (expand
+                                                         "iterate"
+                                                         4
+                                                         1)
+                                                        (("1"
+                                                          (expand
+                                                           "iterate"
+                                                           4
+                                                           1)
+                                                          (("1"
+                                                            (hide -1)
+                                                            (("1"
+                                                              (expand
+                                                               "o")
+                                                              (("1"
+                                                                (inst
+                                                                 4
+                                                                 "union(difference(A, singleton_ms(n)), difference(Y, Yp))")
+                                                                (("1"
+                                                                  (prop)
+                                                                  (("1"
+                                                                    (inst
+                                                                     1
+                                                                     "A")
+                                                                    (("1"
+                                                                      (expand
+                                                                       "ms_ord_one"
+                                                                       1)
+                                                                      (("1"
+                                                                        (inst?)
+                                                                        (("1"
+                                                                          (postpone)
+                                                                          nil
+                                                                          nil)
+                                                                         ("2"
+                                                                          (postpone)
+                                                                          nil
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil)
+                                         ("2" (postpone) nil nil)
+                                         ("3" (postpone) nil nil)
+                                         ("4" (postpone) nil nil)
+                                         ("5" (postpone) nil nil)
+                                         ("6" (postpone) nil nil))
+                                        nil)
+                                       ("2" (postpone) nil nil)
+                                       ("3" (postpone) nil nil))
+                                      nil)
+                                     ("2" (postpone) nil nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil)
+                         ("2" (postpone) nil nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (ms_ord_equal_ms_ord_one_tc 0
+  (ms_ord_equal_ms_ord_one_tc-1 nil 3999169655
+   ("" (lemma " ms_ord_one_subset_tc")
+    (("" (lemma " ms_ord_subset_ms_ord_one_tc")
+      (("" (decompose-equality 1)
+        (("" (iff)
+          (("" (prop)
+            (("1" (hide -3)
+              (("1" (expand "subset?")
+                (("1" (inst -2 "(x!1, x!2)")
+                  (("1" (assert)
+                    (("1" (expand "member") (("1" (propax) nil nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil)
+             ("2" (hide -2)
+              (("2" (expand "subset?")
+                (("2" (inst -2 "(x!1, x!2)")
+                  (("2" (expand "member") (("2" (assert) nil nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((TC const-decl "transitive" relations_closure TRS)
+    (transitive type-eq-decl nil relations_closure TRS)
+    (transitive? const-decl "bool" relations nil)
+    (subset_is_partial_order name-judgement "(partial_order?[set[T]])"
+     sets_lemmas nil))
    SHOSTAK))
- (|ms_ord_transitive| 0
-  (|ms_ord_transitive-1| NIL 3999173167
-   ("" (LEMMA "ms_ord_equal_ms_ord_one_tc")
-    (("" (CASE "TC(ms_ord) = TC(TC(ms_ord_one))")
-      (("1" (REWRITE "TC_idempotent")
-        (("1" (REPLACE -1 -2 RL)
-          (("1" (HIDE -1) (("1" (REWRITE "TC_characterization") NIL NIL)) NIL))
-          NIL))
-        NIL)
-       ("2" (ASSERT) NIL NIL))
-      NIL))
-    NIL)
-   ((|transitive?| CONST-DECL "bool" |relations| NIL)
-    (|transitive| TYPE-EQ-DECL NIL |relations_closure| TRS)
-    (TC CONST-DECL "transitive" |relations_closure| TRS)
-    (|TC_characterization| FORMULA-DECL NIL |relations_closure| TRS)
-    (|TC_idempotent| FORMULA-DECL NIL |relations_closure| TRS))
+ (ms_ord_transitive 0
+  (ms_ord_transitive-1 nil 3999173167
+   ("" (lemma "ms_ord_equal_ms_ord_one_tc")
+    (("" (case "TC(ms_ord) = TC(TC(ms_ord_one))")
+      (("1" (rewrite "TC_idempotent")
+        (("1" (replace -1 -2 rl)
+          (("1" (hide -1)
+            (("1" (rewrite "TC_characterization") nil nil)) nil))
+          nil))
+        nil)
+       ("2" (assert) nil nil))
+      nil))
+    nil)
+   ((transitive? const-decl "bool" relations nil)
+    (transitive type-eq-decl nil relations_closure TRS)
+    (TC const-decl "transitive" relations_closure TRS)
+    (TC_characterization formula-decl nil relations_closure TRS)
+    (TC_idempotent formula-decl nil relations_closure TRS))
    SHOSTAK))
- (|ms_ord_tc_equivalence| 0
-  (|ms_ord_tc_equivalence-1| |nil| 3998345442
-   ("" (LEMMA "R_subset_TC")
-    (("" (INST -1 "ms_ord")
-      (("" (LEMMA "ms_ord_one_subset_tc")
-        (("" (LEMMA "subset_transitive[[finite_multiset, finite_multiset]]")
-          (("" (INST -1 "TC(ms_ord_one)" "ms_ord" "TC(ms_ord)")
-            (("" (ASSERT) NIL NIL)) NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   ((|R_subset_TC| FORMULA-DECL NIL |relations_closure| TRS)
-    (|transitive?| CONST-DECL "bool" |relations| NIL)
-    (|transitive| TYPE-EQ-DECL NIL |relations_closure| TRS)
-    (TC CONST-DECL "transitive" |relations_closure| TRS)
-    (|subset_is_partial_order| NAME-JUDGEMENT "(partial_order?[set[T]])"
-     |sets_lemmas| NIL)
-    (|subset_transitive| FORMULA-DECL NIL |sets_lemmas| NIL))
+ (ms_ord_tc_equivalence 0
+  (ms_ord_tc_equivalence-1 nil 3998345442
+   ("" (lemma "R_subset_TC")
+    (("" (inst -1 "ms_ord")
+      (("" (lemma "ms_ord_one_subset_tc")
+        ((""
+          (lemma
+           "subset_transitive[[finite_multiset, finite_multiset]]")
+          (("" (inst -1 "TC(ms_ord_one)" "ms_ord" "TC(ms_ord)")
+            (("" (assert) nil nil)) nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((R_subset_TC formula-decl nil relations_closure TRS)
+    (transitive? const-decl "bool" relations nil)
+    (transitive type-eq-decl nil relations_closure TRS)
+    (TC const-decl "transitive" relations_closure TRS)
+    (subset_is_partial_order name-judgement "(partial_order?[set[T]])"
+     sets_lemmas nil)
+    (subset_transitive formula-decl nil sets_lemmas nil))
    SHOSTAK))
- (|ms_ord_one_subset_rtc| 0
-  (|ms_ord_one_subset_rtc-1| |nil| 3998396260
-   ("" (LEMMA "ms_ord_tc_equivalence")
-    (("" (EXPAND "RTC")
-      (("" (EXPAND "IUnion")
-        (("" (EXPAND "subset?" 1)
-          (("" (SKEEP)
-            (("" (EXPAND "member" 1)
-              (("" (EXPAND "o ")
-                (("" (EXPAND "iterate")
-                  (("" (EXPAND "member")
-                    (("" (SKEEP)
-                      (("" (PROP)
-                        (("1" (INST?)
-                          (("1" (ASSERT) (("1" (POSTPONE) NIL NIL)) NIL)) NIL)
-                         ("2" (POSTPONE) NIL NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|ms_ord_U_eq_poset| 0
-  (|ms_ord_U_eq_poset-1| NIL 3999173417
-   ("" (EXPAND "partial_order?")
-    (("" (EXPAND "preorder?")
-      (("" (SPLIT)
-        (("1" (EXPAND "reflexive?")
-          (("1" (SKEEP) (("1" (EXPAND "union") (("1" (GRIND) NIL NIL)) NIL))
-            NIL))
-          NIL)
-         ("2" (EXPAND "transitive?")
-          (("2" (SKEEP)
-            (("2" (EXPAND "union")
-              (("2" (EXPAND "member")
-                (("2" (PROP)
-                  (("1" (HIDE 2)
-                    (("1" (LEMMA "ms_ord_transitive")
-                      (("1" (EXPAND "transitive?")
-                        (("1" (INST -1 "x" "y" "z") (("1" (ASSERT) NIL NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL)
-                   ("2" (ASSERT) NIL NIL) ("3" (ASSERT) NIL NIL)
-                   ("4" (ASSERT) NIL NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL)
-         ("3" (EXPAND "antisymmetric?")
-          (("3" (SKEEP)
-            (("3" (EXPAND "union")
-              (("3" (EXPAND "member")
-                (("3" (PROP)
-                  (("1" (HIDE -2)
-                    (("1" (EXPAND "ms_ord")
-                      (("1" (SKEEP)
-                        (("1" (REPLACES -2)
-                          (("1" (DECOMPOSE-EQUALITY 2)
-                            (("1" (EXPAND "difference")
-                              (("1" (EXPAND "subset")
-                                (("1" (POSTPONE) NIL NIL)) NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL)
-                   ("2" (ASSERT) NIL NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|ms_ord_singleton_iff_lt| 0
-  (|ms_ord_singleton_iff_lt-1| NIL 3999169928
-   ("" (SKEEP)
-    (("" (PROP)
-      (("1" (EXPAND "ms_ord")
-        (("1" (INST 1 "singleton_ms(x)" "singleton_ms(y)")
-          (("1" (PROP)
-            (("1" (REWRITE "subset_m_m") NIL NIL)
-             ("2" (HIDE -2)
-              (("2" (EXPAND "singleton_ms")
-                (("2" (EXPAND "empty")
-                  (("2" (GRIND)
-                    (("2" (DECOMPOSE-EQUALITY)
-                      (("2" (ASSERT) (("2" (GRIND) NIL NIL)) NIL)) NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL)
-             ("3" (EXPAND "difference")
-              (("3" (EXPAND "union")
-                (("3" (EXPAND "singleton_ms") (("3" (PROPAX) NIL NIL)) NIL))
-                NIL))
-              NIL)
-             ("4" (SKEEP)
-              (("4" (EXPAND "member")
-                (("4" (EXPAND "singleton_ms")
-                  (("4" (LIFT-IF)
-                    (("4" (PROP)
-                      (("1" (REPLACES -1)
-                        (("1" (INST 1 "x") (("1" (ASSERT) NIL NIL)) NIL)) NIL)
-                       ("2" (ASSERT) NIL NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL)
-       ("2" (EXPAND "ms_ord")
-        (("2" (SKEEP)
-          (("2" (REWRITE "subset_singleton")
-            (("2" (ASSERT)
-              (("2" (INST -3 "y")
-                (("2" (PROP)
-                  (("1" (SKEEP)
-                    (("1" (EXPAND "member")
-                      (("1" (REPLACE -3 -1)
-                        (("1" (EXPAND "singleton_ms" -1)
-                          (("1" (LIFT-IF)
-                            (("1" (PROP)
-                              (("1" (ASSERT) NIL NIL) ("2" (ASSERT) NIL NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL)
-                   ("2" (REPLACES -1)
-                    (("2" (REWRITE "difference_m_m_empty")
-                      (("2" (REWRITE "union_empty_left")
-                        (("2" (HIDE 2 3)
-                          (("2" (EXPAND "singleton_ms")
-                            (("2" (EXPAND "member")
-                              (("2" (GRIND)
-                                (("2" (DECOMPOSE-EQUALITY -1)
-                                  (("2" (INST -1 "y") (("2" (ASSERT) NIL NIL))
-                                    NIL))
-                                  NIL))
-                                NIL))
-                              NIL))
-                            NIL))
-                          NIL))
-                        NIL))
-                      NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK))
- (|ms_ord_union_monotone_TCC1| 0
-  (|ms_ord_union_monotone_TCC1-1| NIL 3999171256 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL
-   (|ms_ord_union_monotone| SUBTYPE
+ (ms_ord_one_subset_rtc 0
+  (ms_ord_one_subset_rtc-1 nil 3998396260
+   ("" (lemma "ms_ord_tc_equivalence")
+    (("" (expand "RTC")
+      (("" (expand "IUnion")
+        (("" (expand "subset?" 1)
+          (("" (skeep)
+            (("" (expand "member" 1)
+              (("" (expand "o ")
+                (("" (expand "iterate")
+                  (("" (expand "member")
+                    (("" (skeep)
+                      (("" (prop)
+                        (("1" (inst?)
+                          (("1" (assert) (("1" (postpone) nil nil))
+                            nil))
+                          nil)
+                         ("2" (postpone) nil nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (ms_ord_U_eq_poset 0
+  (ms_ord_U_eq_poset-1 nil 3999173417
+   ("" (expand "partial_order?")
+    (("" (expand "preorder?")
+      (("" (split)
+        (("1" (expand "reflexive?")
+          (("1" (skeep)
+            (("1" (expand "union") (("1" (grind) nil nil)) nil)) nil))
+          nil)
+         ("2" (expand "transitive?")
+          (("2" (skeep)
+            (("2" (expand "union")
+              (("2" (expand "member")
+                (("2" (prop)
+                  (("1" (hide 2)
+                    (("1" (lemma "ms_ord_transitive")
+                      (("1" (expand "transitive?")
+                        (("1" (inst -1 "x" "y" "z")
+                          (("1" (assert) nil nil)) nil))
+                        nil))
+                      nil))
+                    nil)
+                   ("2" (assert) nil nil) ("3" (assert) nil nil)
+                   ("4" (assert) nil nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil)
+         ("3" (expand "antisymmetric?")
+          (("3" (skeep)
+            (("3" (expand "union")
+              (("3" (expand "member")
+                (("3" (prop)
+                  (("1" (hide -2)
+                    (("1" (expand "ms_ord")
+                      (("1" (skeep)
+                        (("1" (replaces -2)
+                          (("1" (decompose-equality 2)
+                            (("1" (expand "difference")
+                              (("1"
+                                (expand "subset")
+                                (("1" (postpone) nil nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil)
+                   ("2" (assert) nil nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (ms_ord_singleton_iff_lt 0
+  (ms_ord_singleton_iff_lt-1 nil 3999169928
+   ("" (skeep)
+    (("" (prop)
+      (("1" (expand "ms_ord")
+        (("1" (inst 1 "singleton_ms(x)" "singleton_ms(y)")
+          (("1" (prop)
+            (("1" (rewrite "subset_m_m") nil nil)
+             ("2" (hide -2)
+              (("2" (expand "singleton_ms")
+                (("2" (expand "empty")
+                  (("2" (grind)
+                    (("2" (decompose-equality)
+                      (("2" (assert) (("2" (grind) nil nil)) nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil)
+             ("3" (expand "difference")
+              (("3" (expand "union")
+                (("3" (expand "singleton_ms") (("3" (propax) nil nil))
+                  nil))
+                nil))
+              nil)
+             ("4" (skeep)
+              (("4" (expand "member")
+                (("4" (expand "singleton_ms")
+                  (("4" (lift-if)
+                    (("4" (prop)
+                      (("1" (replaces -1)
+                        (("1" (inst 1 "x") (("1" (assert) nil nil))
+                          nil))
+                        nil)
+                       ("2" (assert) nil nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil)
+       ("2" (expand "ms_ord")
+        (("2" (skeep)
+          (("2" (rewrite "subset_singleton")
+            (("2" (assert)
+              (("2" (inst -3 "y")
+                (("2" (prop)
+                  (("1" (skeep)
+                    (("1" (expand "member")
+                      (("1" (replace -3 -1)
+                        (("1" (expand "singleton_ms" -1)
+                          (("1" (lift-if)
+                            (("1" (prop)
+                              (("1" (assert) nil nil)
+                               ("2" (assert) nil nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil)
+                   ("2" (replaces -1)
+                    (("2" (rewrite "difference_m_m_empty")
+                      (("2" (rewrite "union_empty_left")
+                        (("2" (hide 2 3)
+                          (("2" (expand "singleton_ms")
+                            (("2" (expand "member")
+                              (("2"
+                                (grind)
+                                (("2"
+                                  (decompose-equality -1)
+                                  (("2"
+                                    (inst -1 "y")
+                                    (("2" (assert) nil nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK))
+ (ms_ord_union_monotone_TCC1 0
+  (ms_ord_union_monotone_TCC1-1 nil 3999171256
+   ("" (subtype-tcc) nil nil) nil nil
+   (ms_ord_union_monotone subtype
     "multisets_nat.union(multisets_nat.m, multisets_nat.p)"
     "finite_multiset")))
- (|ms_ord_union_monotone_TCC2| 0
-  (|ms_ord_union_monotone_TCC2-1| NIL 3999171256 ("" (SUBTYPE-TCC) NIL NIL) NIL
-   NIL
-   (|ms_ord_union_monotone| SUBTYPE
+ (ms_ord_union_monotone_TCC2 0
+  (ms_ord_union_monotone_TCC2-1 nil 3999171256
+   ("" (subtype-tcc) nil nil) nil nil
+   (ms_ord_union_monotone subtype
     "multisets_nat.union(multisets_nat.n, multisets_nat.p)"
     "finite_multiset")))
- (|ms_ord_union_monotone| 0
-  (|ms_ord_union_monotone-1| NIL 3999171257
-   ("" (SKEEP)
-    (("" (EXPAND "ms_ord")
-      (("" (SKEEP)
-        (("" (INST?)
-          (("" (PROP)
-            (("1" (LEMMA "subset_union")
-              (("1" (LEMMA "subset_transitive")
-                (("1" (INST? -2)
-                  (("1" (INST -1 "X" "m" "union(m,p)") (("1" (ASSERT) NIL NIL))
-                    NIL))
-                  NIL))
-                NIL))
-              NIL)
-             ("2" (HIDE -3 2)
-              (("2" (DECOMPOSE-EQUALITY)
-                (("2" (REPLACES -2 1) (("2" (GRIND) NIL NIL)) NIL)) NIL))
-              NIL))
-            NIL))
-          NIL))
-        NIL))
-      NIL))
-    NIL)
-   NIL SHOSTAK)))
+ (ms_ord_union_monotone 0
+  (ms_ord_union_monotone-1 nil 3999171257
+   ("" (skeep)
+    (("" (expand "ms_ord")
+      (("" (skeep)
+        (("" (inst?)
+          (("" (prop)
+            (("1" (lemma "subset_union")
+              (("1" (lemma "subset_transitive")
+                (("1" (inst? -2)
+                  (("1" (inst -1 "X" "m" "union(m,p)")
+                    (("1" (assert) nil nil)) nil))
+                  nil))
+                nil))
+              nil)
+             ("2" (hide -3 2)
+              (("2" (decompose-equality)
+                (("2" (replaces -2 1) (("2" (grind) nil nil)) nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   nil SHOSTAK)))
 

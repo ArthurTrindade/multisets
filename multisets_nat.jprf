@@ -2406,5 +2406,532 @@
     ]
    }
   }
+ ],
+ "multisets_nat.ms_ord_subset_ms_ord_one_tc": [
+  {
+   "info": {
+    "theory": "multisets_nat",
+    "formula": "ms_ord_subset_ms_ord_one_tc",
+    "status": "unfinished",
+    "prover": "PVS 7.1.0 (Allegro CL Enterprise Edition)",
+    "shasum": "10259aadba0b09938ab0b61aeedf7595c79a16041901d62888a0683535f893ba"
+   },
+   "origin": ".prf",
+   "proofTree": {
+    "branch": "",
+    "name": "ms_ord_subset_ms_ord_one_tc",
+    "type": "root",
+    "rules": [
+     {
+      "branch": "",
+      "name": "(expand \"ms_ord\")",
+      "type": "proof-command",
+      "rules": []
+     },
+     {
+      "branch": "",
+      "name": "(expand \"subset?\")",
+      "type": "proof-command",
+      "rules": []
+     },
+     {
+      "branch": "",
+      "name": "(skeep)",
+      "type": "proof-command",
+      "rules": []
+     },
+     {
+      "branch": "",
+      "name": "(expand \"member\")",
+      "type": "proof-command",
+      "rules": []
+     },
+     {
+      "branch": "",
+      "name": "(skeep)",
+      "type": "proof-command",
+      "rules": []
+     },
+     {
+      "branch": "",
+      "name": "(case \"FORALL(A, B, X, Y: finite_multiset) : ( (NOT X = empty) AND subset(X,A) AND B = union(difference(A, X), Y) AND FORALL y: Y(y) > 0 => EXISTS x: X(x) > 0 AND y < x) IMPLIES TC(ms_ord_one)(A,B)\")",
+      "type": "proof-command",
+      "rules": [
+       {
+        "branch": "1",
+        "name": "(1)",
+        "type": "proof-branch",
+        "rules": [
+         {
+          "branch": "1",
+          "name": "(inst -1 \"x_1`1\" \"x_1`2\" \"X\" \"Y\")",
+          "type": "proof-command",
+          "rules": []
+         },
+         {
+          "branch": "1",
+          "name": "(assert)",
+          "type": "proof-command",
+          "rules": []
+         }
+        ]
+       },
+       {
+        "branch": "2",
+        "name": "(2)",
+        "type": "proof-branch",
+        "rules": [
+         {
+          "branch": "2",
+          "name": "(hide-all-but 1)",
+          "type": "proof-command",
+          "rules": []
+         },
+         {
+          "branch": "2",
+          "name": "(measure-induct+ \"card_ms(X)\" (\"X\"))",
+          "type": "proof-command",
+          "rules": []
+         },
+         {
+          "branch": "2",
+          "name": "(case \"card_ms(x!1) = 0\")",
+          "type": "proof-command",
+          "rules": [
+           {
+            "branch": "2.1",
+            "name": "(2.1)",
+            "type": "proof-branch",
+            "rules": [
+             {
+              "branch": "2.1",
+              "name": "(hide -2)",
+              "type": "proof-command",
+              "rules": []
+             },
+             {
+              "branch": "2.1",
+              "name": "(grind)",
+              "type": "proof-command",
+              "rules": []
+             }
+            ]
+           },
+           {
+            "branch": "2.2",
+            "name": "(2.2)",
+            "type": "proof-branch",
+            "rules": [
+             {
+              "branch": "2.2",
+              "name": "(case \"card_ms(x!1) = 1\")",
+              "type": "proof-command",
+              "rules": [
+               {
+                "branch": "2.2.1",
+                "name": "(2.2.1)",
+                "type": "proof-branch",
+                "rules": [
+                 {
+                  "branch": "2.2.1",
+                  "name": "(hide -2)",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(skeep)",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"TC\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"IUnion\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(inst 3 \"1\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"iterate\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"iterate\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"o \")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(inst 3 \"A\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"ms_ord_one\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(rewrite \"card_ms_one_char\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(expand \"is_singleton\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(skeep)",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(inst 3 \"x\" \"Y!1\")",
+                  "type": "proof-command",
+                  "rules": []
+                 },
+                 {
+                  "branch": "2.2.1",
+                  "name": "(prop)",
+                  "type": "proof-command",
+                  "rules": [
+                   {
+                    "branch": "2.2.1.1",
+                    "name": "(2.2.1.1)",
+                    "type": "proof-branch",
+                    "rules": [
+                     {
+                      "branch": "2.2.1.1",
+                      "name": "(hide-all-but (-1 -2 1))",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.1",
+                      "name": "(grind)",
+                      "type": "proof-command",
+                      "rules": []
+                     }
+                    ]
+                   },
+                   {
+                    "branch": "2.2.1.2",
+                    "name": "(2.2.1.2)",
+                    "type": "proof-branch",
+                    "rules": [
+                     {
+                      "branch": "2.2.1.2",
+                      "name": "(assert)",
+                      "type": "proof-command",
+                      "rules": []
+                     }
+                    ]
+                   },
+                   {
+                    "branch": "2.2.1.3",
+                    "name": "(2.2.1.3)",
+                    "type": "proof-branch",
+                    "rules": [
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(skeep)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(inst?)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(expand \"member\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(assert)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(skeep)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.1.3",
+                      "name": "(grind)",
+                      "type": "proof-command",
+                      "rules": []
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "branch": "2.2.2",
+                "name": "(2.2.2)",
+                "type": "proof-branch",
+                "rules": [
+                 {
+                  "branch": "2.2.2",
+                  "name": "(name-replace \"n\" \"choose(domain(x!1))\")",
+                  "type": "proof-command",
+                  "rules": [
+                   {
+                    "branch": "2.2.2.1",
+                    "name": "(2.2.2.1)",
+                    "type": "proof-branch",
+                    "rules": [
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(name-replace \"Xp\" \"difference(x!1,singleton_ms(n))\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(name-replace \"Yp\" \"LAMBDA(i:nat) : IF member(i,domain(Y)) AND i >= n THEN Y(i) ELSE 0 ENDIF\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(skeep)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(expand \"TC \" 4)",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(expand \"IUnion\")",
+                      "type": "proof-command",
+                      "rules": []
+                     },
+                     {
+                      "branch": "2.2.2.1",
+                      "name": "(inst -4 \"Xp\")",
+                      "type": "proof-command",
+                      "rules": [
+                       {
+                        "branch": "2.2.2.1.1",
+                        "name": "(2.2.2.1.1)",
+                        "type": "proof-branch",
+                        "rules": [
+                         {
+                          "branch": "2.2.2.1.1",
+                          "name": "(inst -4 \"union(difference(A,singleton_ms(n)),difference(Y,Yp))\" \"B\" \"Yp\")",
+                          "type": "proof-command",
+                          "rules": [
+                           {
+                            "branch": "2.2.2.1.1.1",
+                            "name": "(2.2.2.1.1.1)",
+                            "type": "proof-branch",
+                            "rules": [
+                             {
+                              "branch": "2.2.2.1.1.1",
+                              "name": "(prop)",
+                              "type": "proof-command",
+                              "rules": [
+                               {
+                                "branch": "2.2.2.1.1.1.1",
+                                "name": "(2.2.2.1.1.1.1)",
+                                "type": "proof-branch",
+                                "rules": [
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"TC\" -1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"IUnion\" -1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(skeep)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(inst 4 \"i+1\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(lemma \" iterate_add\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(inst -1 \"ms_ord_one\" \"1\" \"i\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(replace -1 4)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"iterate\" 4 1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"iterate\" 4 1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(hide -1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"o\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(inst 4 \"union(difference(A, singleton_ms(n)), difference(Y, Yp))\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(prop)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(inst 1 \"A\")",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(expand \"ms_ord_one\" 1)",
+                                  "type": "proof-command",
+                                  "rules": []
+                                 },
+                                 {
+                                  "branch": "2.2.2.1.1.1.1",
+                                  "name": "(inst?)",
+                                  "type": "proof-command",
+                                  "rules": [
+                                   {
+                                    "branch": "2.2.2.1.1.1.1.1",
+                                    "name": "(2.2.2.1.1.1.1.1)",
+                                    "type": "proof-branch",
+                                    "rules": []
+                                   },
+                                   {
+                                    "branch": "2.2.2.1.1.1.1.2",
+                                    "name": "(2.2.2.1.1.1.1.2)",
+                                    "type": "proof-branch",
+                                    "rules": []
+                                   }
+                                  ]
+                                 }
+                                ]
+                               },
+                               {
+                                "branch": "2.2.2.1.1.1.2",
+                                "name": "(2.2.2.1.1.1.2)",
+                                "type": "proof-branch",
+                                "rules": []
+                               },
+                               {
+                                "branch": "2.2.2.1.1.1.3",
+                                "name": "(2.2.2.1.1.1.3)",
+                                "type": "proof-branch",
+                                "rules": []
+                               },
+                               {
+                                "branch": "2.2.2.1.1.1.4",
+                                "name": "(2.2.2.1.1.1.4)",
+                                "type": "proof-branch",
+                                "rules": []
+                               }
+                              ]
+                             }
+                            ]
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
  ]
 }
